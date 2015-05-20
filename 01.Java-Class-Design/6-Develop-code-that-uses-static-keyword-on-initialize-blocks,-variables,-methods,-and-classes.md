@@ -88,11 +88,8 @@ class OuterClass {
     }
 } 
 
-public class Test
-{
-    // How to create instance of static and non static nested class?
-    public static void main(String args[]){
-
+public class Test {
+    public static void main(String args[]) {
        // create instance of nested Static class
        OuterClass.NestedStaticClass sc = new OuterClass.NestedStaticClass();
 
