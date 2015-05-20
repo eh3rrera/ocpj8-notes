@@ -40,3 +40,23 @@ When you create a subclass, the methods in the subclass cannot have less accessi
 In Java, a class is only allowed to inherit from a single superclass (singular inheritance). In some programming languages, like C++, it is possible for a subclass to inherit from multiple superclasses (multiple inheritance).
 
 ###Composition
+You do composition by having an instance of another class as a field of your class instead of extending.
+
+When to use which?
+* If there is an IS-A relation, inheritance is likely to be preferred.
+* If there is a HAS-A relationship, composition is preferred.
+
+For example:
+````java
+class Toy {} 
+
+class Animal{} 
+
+// Cat is an Animal, so Cat class extends Animal class.
+class Cat extends Animal { 
+ // Cat has a Toy, so Cat has an instance of Toy as its member.
+ private Toy toy; 
+}
+````
+
+Favoring composition over inheritance is a popular object oriented design principle that helps to create flexible and maintainable code. For example, composition facilitates testing. If one class is composed of another class, you can easily create a mock object representing the composed class.
