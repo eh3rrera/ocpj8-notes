@@ -4,7 +4,7 @@ An interface is like an abstract class, except that it cannot contain an impleme
 
 An interface is declared using the interface keyword. Just like classes, an interface can be declared public or with package scope (no access modifier).
 ````java
-public interface Vehicule {
+public interface Vehicle {
     public String serie = "XXX";
     public void start();
 }
@@ -13,17 +13,30 @@ The variables declared in an interface are public, static and final by default. 
 
 Before you can use an interface, it must be implemented by some class:
 ````java
-public class Truck implements Vehicule {
+public class Truck implements Vehicle {
     public void start() {
         System.out.println("Starting truck...");
     }
 }
 ````
-A class that implements an interface must implement all the methods declared in the interface.
+A class that implements an interface must implement all the methods declared in the interface. The only exception are default methods. Java 8 introduces this feature, that provides the flexibility to allow an interface to define an implementation which will be used as default in the situation where a class fails to provide an implementation for that method.
+
+This is made by adding the keyword `default` before the method's access modifier and adding the implementation inside interface:
+````java
+interface Vehicle {
+    default public void start() {
+        System.out.println("Default start");
+    }
+}
+
+class Car implements Vehicle {
+    // valid in Java 8
+}
+````java
 
 Once a class implements an interface, an instance of that class can be assigned to a reference of the interface type:
 ````java
-Vehicule truck = new Truck();
+Vehicle truck = new Truck();
 ````
 
 A class can implement multiple interfaces. In that case, the class must implement all the methods declared in all the interfaces implemented:
