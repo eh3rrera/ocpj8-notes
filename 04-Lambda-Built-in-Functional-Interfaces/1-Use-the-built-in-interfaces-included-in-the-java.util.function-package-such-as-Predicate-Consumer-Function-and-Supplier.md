@@ -32,10 +32,14 @@ public class Test {
     l.add("easy");
     l.add("fortune");
     List<String> filtered = l.stream().filter( s -> s.length() > 5 ).collect(Collectors.<String>toList());
+    System.out.println(filtered);
   }
 }
 ````
-Here, the filter method expects a *Predicate*, so we can pass a lambda expression to simplify things.
+Here, the filter method expects a *Predicate*, so we can pass a lambda expression to simplify things, so the output of the example is:
+````
+["successfully", "fortune"]
+````
 
 ###Consumer
 This functional interface represents an operation that accepts a single input argument and returns no result. The real outcome is the side-effects it produces. Since it's a functional interface, you can pass a lambda expressions wherever a *Consumer* is expected.
@@ -65,4 +69,36 @@ public class Test {
   }
 }
 ````
-Basically, what *Consumer* does is executing the assigned lambda expression. The side-effect here, it's the updating of the product's price.
+Basically, what *Consumer* does is executing the assigned lambda expression. The side-effect here, it's the updating of the product's price, so the output is:
+````
+5.9
+````
+
+###Function
+This functional interface a function that accepts one argument and produces a result. One use for example, it's  to convert or transform from one object to another. Since it's a functional interface, you can pass a lambda expressions wherever a *Function* is expected.
+
+See the [API](https://docs.oracle.com/javase/8/docs/api/java/util/function/Function.html) to know the methods of this interface.
+
+Here's an example:
+````java
+public class Test {
+  public static void main(String[] args) {
+    int n = 5;
+    modifyTheValue(n, val-> val + 10);
+    modifyTheValue(n, val-> val * 100);
+  }
+  
+  static void modifyValue(int v, Function<Integer, Integer> function){
+    int result = function.apply(v);
+    System.out.println(newValue);
+  }
+  
+}
+````
+The input parameter type and the return type of the method can either be same or different. In this case, they are the same type and the program just execute the functions represented by the lambda expression, an addition and a multiplication, so the output is:
+````
+15
+500
+````
+
+###Supplier
