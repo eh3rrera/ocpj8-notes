@@ -1,4 +1,6 @@
 #Use  the built-in interfaces included in the java.util.function package such as Predicate, Consumer, Function, and Supplier
+Functional interfaces provide target types for lambda expressions and method references. Each functional interface has a single abstract method, called the functional method for that functional interface, to which the lambda expression's parameter and return types are matched or adapted.
+
 ###Predicate
 A predicate is a statement that may be true or false depending on the values of its variables. It can be thought of as a function that returns a value that is either true or false.
 
@@ -102,3 +104,26 @@ The input parameter type and the return type of the method can either be same or
 ````
 
 ###Supplier
+This functional interface does the opposite of the *Consumer*, it takes no arguments but it returns some value. It may return different values when it is being called more than once. Since it's a functional interface, you can pass a lambda expressions wherever a *Supplier* is expected.
+
+See the [API](https://docs.oracle.com/javase/8/docs/api/java/util/function/Supplier.html) to know the one method of this interface.
+
+Here's an example:
+````java
+public class Program {
+    public static void main(String[] args) {
+        int n = 3;
+	    display(() -> n + 10);
+	    display(() -> n + 100);
+    }
+    
+    static void display(Supplier<Integer> arg) {
+	    System.out.println(arg.get());
+    }
+}
+````
+Basically, a *Supplier* just provides values. The output of the example is:
+````
+13
+113
+````
