@@ -1,4 +1,4 @@
-Collections Streams and Filters
+#Collections Streams and Filters
 A stream represents a sequence of elements. It supports different kind of operations to perform computations upon those elements.
 
 In Java 8, collections have methods that return a stream, for example, *List* and *Set* support the new methods `stream()` and  `parallelStream()` to either create a sequential or a parallel stream.
