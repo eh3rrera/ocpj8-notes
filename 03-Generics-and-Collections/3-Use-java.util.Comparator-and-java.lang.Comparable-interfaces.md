@@ -25,7 +25,7 @@ class Person implements Comparable<Person> {
 	private int age;
 	private String name;
  
-	public HDTV(int age, String name) {
+	public Person(int age, String name) {
 		this.age = age;
 		this.name = name;
 	}
