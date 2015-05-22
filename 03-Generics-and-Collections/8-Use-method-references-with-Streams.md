@@ -16,16 +16,16 @@ There are four types of method references (assuming a class named Person with a 
 
 |Type|Example|
 |----|---------|
-|Reference to a static method|Math::square|
-|Reference to a constructor	|Integer::new|
-|Reference to an instance method of an arbitrary object of a particular type	|Person::getName|
-|Reference to an instance method of a particular object	|p::getName|
+|Reference to a static method|`Math::square`|
+|Reference to a constructor	|`Integer::new`|
+|Reference to an instance method of an arbitrary object of a particular type	|`Person::getName`|
+|Reference to an instance method of a particular object	|`p::getName`|
 
 Here's a comparison between a lambda expression and the equivalent method expression:
 
 |Lambda Expression|Method Reference|
 |----|---------|
-|n -> Math.square(n)|Math::square|
-|i -> new Integer(i)	|Integer::new|
-|p -> p.getName()	|Person::getName|
-|p -> p.getName()	|p::getName|
+|`n -> Math.square(n)`|`Math::square`|
+|`i -> new Integer(i)`	|`Integer::new`|
+|`p -> p.getName()`	|`Person::getName`|
+|`p -> p.getName()`	|`p::getName`|
