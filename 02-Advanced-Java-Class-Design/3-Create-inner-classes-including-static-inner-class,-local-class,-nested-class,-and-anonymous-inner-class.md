@@ -86,7 +86,7 @@ The rules of a nested class are:
 * If the nested class is used inside the class that defines it, the keyword this can be used to create an instance of the nested class (for example `OuterClass.NestedClass nc = this.new NestedClass();`)
 
 ###Anonymous Inner Class
-Anonymous Inner classes are classes without name (but not without type) used to override a method of class or interface.
+Anonymous Inner classes are classes without name (but not without type) used to override a method of class or interface. They can'y have constructors.
 ````java
 interface Animal {  
   void eat();  
@@ -111,3 +111,8 @@ Represents:
 * A class that is created but have its name decided by the compiler
 * The class implements the *Animal* interface and provides the implementation of the *eat* method.
 * An object is created and referred by the *a* variable of *Animal* type.
+
+The rules to access variables in anonymous classes are:
+* An anonymous class has access to the members of its enclosing class.
+* An anonymous class cannot access local variables in its enclosing scope that are not declared as final or effectively final.
+* Like a nested class, a declaration of a variable in an anonymous class shadows any other declarations in the enclosing scope that have the same name. 
