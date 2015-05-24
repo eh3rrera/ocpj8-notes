@@ -12,7 +12,7 @@ OptionalInt, OptionalLong, and OptionalDouble deal with optional primitive value
 * `getAsLong()` method from OptionalLong class return long value.
 * `getAsDouble()` method from OptionalDouble class return double value.
 
-Some stream operations (like `max()` or `min()`)  return optional values with nothing inside if the stream is empty. For example:
+Some stream operations (like `map()`, `max()`, `min()`, etc.)  return optional values with nothing inside if the stream is empty. For example:
 ````java
 OptionalInt min = Stream.of(10, 20, 30, 40).filter(n -> n > 50).min();
 if (min.isPresent()) {
@@ -25,6 +25,17 @@ Or if we don't need to print the "No value" message:
 ````java
 OptionalInt min = Stream.of(10, 20, 30, 40).filter(n -> n > 50).min();
 min.isPresent(n -> System.out.println(n));
+````
+
+Besides `get()`, we have three other methods to obtain values from an Optional:
+* `T orElse(T defaultValue)` Returns the value contained in the Optional. If empty, it returns the specified defaultValue.
+* `T orElseGet(Supplier<? extends T> defaultSupplier)` Returns the value contained in the Optional. If empty, it returns the value returned from the specified defaultSupplier.
+* `<X extends Throwable> T orElseThrow(Supplier<? extends X> exceptionSupplier) throws X extends Throwable` Returns the value contained in the Optional. If empty, it throws the exception returned from the specified exceptionSupplier.
+For example:
+````java
+Stream.of(10, 20, 30, 40).filter(n -> n > 50).min().orElse(0);
+Stream.of(10, 20, 30, 40).filter(n -> n > 50).min().orElseGet(() -> logAndReturnDefault());
+Stream.of(10, 20, 30, 40).filter(n -> n > 50).min().orElseThrow(Exception::new);
 ````
 
 If we are not using streams and we need to create an Optional, there are three methods we can use:
