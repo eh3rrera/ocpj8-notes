@@ -53,6 +53,6 @@ class Employee {
 ````
 We can extract the employee ids directly to a stream of `int` in this way:
 ````java
-employees.stream().mapToInt(e -> e.getId()).average();
+List<Integer> employeeIds = employees.stream().mapToInt(e -> e.getId()).collect(Collectors.toList());
 ````
 This works because `getInt()` returns an `int`, the type expected by `mapToInt()`.
