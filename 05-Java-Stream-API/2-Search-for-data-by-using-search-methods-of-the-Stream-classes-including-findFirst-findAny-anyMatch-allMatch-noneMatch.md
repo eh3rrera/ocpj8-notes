@@ -1,40 +1,32 @@
-#Develop code that uses the Optional class
+#Search for data by using search methods of the Stream classes including findFirst, findAny, anyMatch, allMatch, noneMatch
+We hava two types of methods in the Stream API to search for data:
+* findXXX methods. Take no arguments and return an Optional object with the result, or an empty Optional if nothing is found.
+* XXXMatch methods. Take a Predicate and return a boolean if an element in the stream returns true by applying the Predicate.
 
-The [java.util.Optional<T>](https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html) class acts as a container which may or may not contain a non-null value. 
+The methods are:
 
-The main methods of the class are:
-* `isPresent()` that returns true if it contains a non-null value, false otherwise.
-* `get()` that returns the non-null value if it contains a non-null value, and throws a NoSuchElementException otherwise. To avoid the exception, before getting the value you must check if the Optional object contains a non-null value.
-* `ifPresent(Consumer<? super T> action)` takes a Consumer to perform some operation on the value contained in the Optional. If the Optional is empty or null, it does not perform anything.
+`Optional<T>	findAny()`
+This is a short-circuiting terminal operation that returns an Optional representing some element of the stream. This doesn't guarantee to return the first element of a sorted stream.
 
-OptionalInt, OptionalLong, and OptionalDouble deal with optional primitive values.
-* `getAsInt()` method from OptionalInt class returns int value.
-* `getAsLong()` method from OptionalLong class return long value.
-* `getAsDouble()` method from OptionalDouble class return double value.
+`Optional<T>	findAny()`
+This is a short-circuiting terminal operation that returns the first element of the stream. If the stream has no order, then any element may be returned.
 
-Some stream operations (like `max()` or `min()`)  return optional values with nothing inside if the stream is empty. For example:
+`boolean anyMatch(Predicate<? super T> predicate)`
+This is a short-circuiting terminal operation that returns whether any elements of this stream match the provided predicate.  If the stream is empty then false is returned and the predicate is not evaluated.
+
+`boolean allMatch(Predicate<? super T> predicate)`
+This is a short-circuiting terminal operation that returns whether all elements of this stream match the provided predicate.  If the stream is empty then true is returned and the predicate is not evaluated.
+
+`boolean noneMatch(Predicate<? super T> predicate)`
+This is a short-circuiting terminal operation that returns whether no elements of this stream match the provided predicate.  If the stream is empty then true is returned and the predicate is not evaluated.
+
+A short-circuiting terminal operation basically means that there's no need to process the entire stream to return a result. As soon as an element that fits the predicate is found or that a result can be infered, the result is return.
+
+Here's an example:
 ````java
-OptionalInt min = Stream.of(10, 20, 30, 40).filter(n -> n > 50).min();
-if (min.isPresent()) {
-  System.out.println(min.getAsInt());
-} else {
-  System.out.println("No value");
-}
-````
-Or if we don't need to print the "No value" message:
-````java
-OptionalInt min = Stream.of(10, 20, 30, 40).filter(n -> n > 50).min();
-min.isPresent(n -> System.out.println(n));
-````
-
-If we are not using streams and we need to create an Optional, there are three methods we can use:
-* `<T> Optional<T> empty()` Returns an empty Optional.
-* `<T> Optional<T> of(T value)` Returns an Optional containing the specified value  If the value is null, it throws a NullPointerException.
-* `<T> Optional<T> ofNullable(T value)` Returns an Optional containing the specified value if the value is non-null. If the specified value is null, it returns an empty Optional.
-
-For example:
-````java
-Optional<String> empty  = Optional.empty();
-Optional<String> string = Optional.of("Hello");
-Optional<String> empty2  = Optional.ofNullable(null);
+Optional<Integer> first = Stream.of(1, 10, 5, 3, 13, 20).filter(i -> i % 2 == 0).findFirst(); //returns 2
+Optional<Integer> any = Stream.of(1, 10, 5, 3, 13, 20).filter(i -> i % 2 == 0).findFirst(); //can return 2
+boolean any2 = Stream.of(1, 10, 5, 3, 13, 20).anyMatch(i -> i % 3 == 0); //returns true
+boolean all = Stream.of(1, 10, 5, 3, 13, 20).allMatch(i -> i % 2 == 0); //returns false
+boolean none = Stream.of(1, 10, 5, 3, 13, 20).noneMatch(i -> i % 6 == 0); //returns true
 ````
