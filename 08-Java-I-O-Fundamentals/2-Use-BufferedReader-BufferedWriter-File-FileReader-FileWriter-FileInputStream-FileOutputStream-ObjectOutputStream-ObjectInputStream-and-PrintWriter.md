@@ -1,21 +1,142 @@
 #Use BufferedReader, BufferedWriter, File, FileReader, FileWriter, FileInputStream, FileOutputStream, ObjectOutputStream, ObjectInputStream, and PrintWriter in the java.io package.
 
 [File](https://docs.oracle.com/javase/8/docs/api/java/io/File.html)
+
 This class is a representation of a file or a directory pathnames. Its instaces are immutable, that is, once created, the abstract pathname represented by the object will never change.
 
 You can create an instance this way:
-´´´´java
+````java
 File file = new File("c:\\file.txt");
-´´´´
+````
 Or:
-´´´´java
+````java
 File file = new File("/usr/file.txt");
-´´´´
+````
 Once you have created a File object you can do a lot of things:
-´´´´java
-// Check if the corresponding file actually exists
+````java
+// Check if the corresponding file or directory actually exists
 boolean fileExists = file.exists();
 
-//
+// Create a single directory if it does not already exist
+boolean directoryCreated = file.mkdir();
 
-´´´´
+// Read the length of the file in bytes
+long length = file.length();
+
+// Rename or move a file or directory:
+boolean renameSuccessful = file.renameTo(new File("c:\\new-file.txt"));
+
+// Delete the file or directory
+success = file.delete();
+
+// Check if the File object points to a directory
+boolean isDirectory = file.isDirectory();
+
+// Check if the file/directory is hidden
+boolean isHidden = file.isHidden();
+
+// Get a list (an array) of all the names of the files/directories in a directory
+String[] fileNames = file.list();
+
+// Get a list of all files/directories in a directory as instances of File
+File[]   files = file.listFiles();
+
+````
+
+[FileReader](https://docs.oracle.com/javase/8/docs/api/java/io/FileReader.html)  
+and
+[FileWriter](https://docs.oracle.com/javase/8/docs/api/java/io/FileWriter.html)
+FileReader and FileWriter are character based, they are intended for reading and writing text. 
+
+Here's an example code snippet for FileReader:
+````java
+Reader reader = new FileReader("c:\\file.txt");
+int data = reader.read();
+while(data != -1){
+    char dataChar = (char) data;
+    data = reader.read();
+}
+reader.close();
+````
+Here's an example code snippet for FileWriter:
+````java
+Writer writer = new FileWriter("c:\\data\\file-output.txt");
+writer.write("Hello World Writer");
+writer.close();
+````
+FileReader extends from InputStreamReader, so it can work with an InputStream. At the same time, FileWriter extends from OutputStreamReader, so it can work with an OutputStream.
+
+[FileInputStream](https://docs.oracle.com/javase/8/docs/api/java/io/FileInputStream.html)
+
+FileInputStream reads the contents of a file as a stream of bytes. It's a subclass of InputStream. It can be created either with a String or a File object that represent a path. Here's an example:
+````java
+InputStream input = new FileInputStream("c:\\text.txt");
+int byteData = input.read();
+while(byteData != -1) {
+  byteData = input.read();
+}
+input.close();
+````
+There's another version of `read()` that reads up to the length of an array of bytes of data from the input stream into that array:
+````java
+InputStream fis = new FileInputStream("c:\\text.txt");
+byte[] data = new byte[1024];
+int bytesRead = fis.read(data);
+while(bytesRead != -1) {
+  bytesRead = fis.read(data);
+}
+fis.close();
+````
+
+[FileOutputStream](https://docs.oracle.com/javase/8/docs/api/java/io/FileOutputStream.html)
+
+FileOutputStream writes the contents of a file as a stream of bytes. It's a subclass of OutputStream. It can be created either with a String or a File object that represent a path.
+
+When you create a FileOutputStream representing a file that already exists, you can decide if you want to overwrite or to append to the existing file. It depends on the constructor you choose:
+````java
+OutputStream fos1 = new FileOutputStream("c:\\text.txt"); //overwrites file
+OutputStream fos2 = new FileOutputStream("c:\\text.txt", true); //appends to file
+OutputStream fos3 = new FileOutputStream("c:\\text.txt", false); //overwrites file
+````
+
+When you write to a FileOutputStream, the data may get cached internally in memory and written to disk at a later time. If you want to make sure that all data is written to disk without having to close the FileOutputStream, you can call its `flush()` method.
+
+````java
+OutputStream output = null;
+try {
+  output = new FileOutputStream("c:\\text.txt");
+
+  while(moreData()) {
+    int data = getData();
+    output.write(data);
+  }
+} finally {
+    if(output != null) {
+        output.close();
+    }
+}
+````
+The other versions of the `write()` method are:
+`write(byte[] bytes)`. It writes all the bytes in the byte array to the OutputStream.
+`write(byte[] bytes, int offset, int length)`. It writes length number of bytes starting from offset from the byte array to the OutputStream.
+
+[BufferedInputStream](https://docs.oracle.com/javase/8/docs/api/java/io/BufferedInputStream.html) 
+BufferedInputStream provides buffering to an input stream. Rather than read one byte at a time, BufferedInputStream reads a larger block at a time. 
+To add buffering to an InputStream just wrap it in a BufferedInputStream:
+````java
+InputStream input = new BufferedInputStream(new FileInputStream("c:\\file.txt"));
+````
+The BufferedInputStream creates a byte array internally and fill it by calling the InputStream.read(byte[]) methods on the underlying InputStream. You can set the buffer size to use internally, for example to 1024 bytes, like this:
+````java
+InputStream input = new BufferedInputStream(new FileInputStream("c:\\file.txt"), 1024);
+````
+
+[BufferedOutputStream](https://docs.oracle.com/javase/8/docs/api/java/io/BufferedOutputStream.html) 
+BufferedOutputStream provides buffering to an output stream. To add buffering to an OutputStream just wrap it in a BufferedOutputStream:
+````java
+OutputStream input = new BufferedOutputStream(new FileOutputStream("c:\\file.txt"));
+````
+To set the size of the buffer, provide it as a constructor parameter like this:
+````java
+OutputStream input = new BufferedOutputStream(new FileOutputStream("c:\\file.txt"), 1024);
+````
