@@ -44,8 +44,9 @@ File[]   files = file.listFiles();
 ````
 
 [FileReader](https://docs.oracle.com/javase/8/docs/api/java/io/FileReader.html)  
-and
+and  
 [FileWriter](https://docs.oracle.com/javase/8/docs/api/java/io/FileWriter.html)
+
 FileReader and FileWriter are character based, they are intended for reading and writing text. 
 
 Here's an example code snippet for FileReader:
@@ -60,7 +61,7 @@ reader.close();
 ````
 Here's an example code snippet for FileWriter:
 ````java
-Writer writer = new FileWriter("c:\\data\\file-output.txt");
+Writer writer = new FileWriter("c:\\file.txt");
 writer.write("Hello World Writer");
 writer.close();
 ````
@@ -120,7 +121,8 @@ The other versions of the `write()` method are:
 `write(byte[] bytes)`. It writes all the bytes in the byte array to the OutputStream.
 `write(byte[] bytes, int offset, int length)`. It writes length number of bytes starting from offset from the byte array to the OutputStream.
 
-[BufferedInputStream](https://docs.oracle.com/javase/8/docs/api/java/io/BufferedInputStream.html) 
+[BufferedInputStream](https://docs.oracle.com/javase/8/docs/api/java/io/BufferedInputStream.html)
+
 BufferedInputStream provides buffering to an input stream. Rather than read one byte at a time, BufferedInputStream reads a larger block at a time. 
 To add buffering to an InputStream just wrap it in a BufferedInputStream:
 ````java
@@ -131,7 +133,8 @@ The BufferedInputStream creates a byte array internally and fill it by calling t
 InputStream input = new BufferedInputStream(new FileInputStream("c:\\file.txt"), 1024);
 ````
 
-[BufferedOutputStream](https://docs.oracle.com/javase/8/docs/api/java/io/BufferedOutputStream.html) 
+[BufferedOutputStream](https://docs.oracle.com/javase/8/docs/api/java/io/BufferedOutputStream.html)
+
 BufferedOutputStream provides buffering to an output stream. To add buffering to an OutputStream just wrap it in a BufferedOutputStream:
 ````java
 OutputStream input = new BufferedOutputStream(new FileOutputStream("c:\\file.txt"));
@@ -140,3 +143,68 @@ To set the size of the buffer, provide it as a constructor parameter like this:
 ````java
 OutputStream input = new BufferedOutputStream(new FileOutputStream("c:\\file.txt"), 1024);
 ````
+
+[ObjectInputStream](https://docs.oracle.com/javase/8/docs/api/java/io/ObjectInputStream.html)
+
+ObjectInputStream allows you to read serialized objects (their class must implement java.io.Serializable) from an InputStream instead of only bytes. You wrap an InputStream in a ObjectInputStream like this:
+````java
+class Test implements java.io.Serializable {}
+...
+ObjectInputStream input = new ObjectInputStream(new FileInputStream("obj.data"));
+Test object = (Test) input.readObject();
+input.close();   
+````
+
+[ObjectOutputStream](https://docs.oracle.com/javase/8/docs/api/java/io/ObjectOutputStream.html)
+
+ObjectOutputStream allows you to write serialized objects (their class must implement java.io.Serializable) from an OutputStream instead of only bytes. You wrap an OutputStream in a ObjectOutputStream like this:
+````java
+class Test implements java.io.Serializable {}
+...
+ObjectOutputStream output = new ObjectOutputStream(new FileOutputStream("obj.data"));
+Test object = new Test();
+output.writeObject(object);
+output.close();  
+````
+
+[PrintWriter](https://docs.oracle.com/javase/8/docs/api/java/io/PrinterWriter.html) 
+
+PrintWriter class allows you to write formatted data or data from primitive types instead of bytes to an underlying Writer. Here's an example:
+````java
+PrintWriter writer = new PrintWriter(new FileWriter("c:\\file.txt") );
+writer.print(true);
+writer.print(1);
+writer.print(1.23);
+
+// printf and format methods do the same
+writer.printf("%s", "Hi");
+writer.format("%s", "Hi");
+
+writer.close();
+````
+
+The constructors of PrintWriter are:
+
+`PrintWriter(File file)`  
+Creates a new PrintWriter, without automatic line flushing, with the specified file.
+
+`PrintWriter(File file, String csn)`  
+Creates a new PrintWriter, without automatic line flushing, with the specified file and charset.
+
+`PrintWriter(OutputStream out)`  `  
+Creates a new PrintWriter, without automatic line flushing, from an existing OutputStream.
+
+`PrintWriter(OutputStream out, boolean autoFlush)`  
+Creates a new PrintWriter from an existing OutputStream.
+
+`PrintWriter(String fileName)`  
+Creates a new PrintWriter, without automatic line flushing, with the specified file name.
+
+`PrintWriter(String fileName, String csn)`  
+Creates a new PrintWriter, without automatic line flushing, with the specified file name and charset.
+
+`PrintWriter(Writer out)`  
+Creates a new PrintWriter, without automatic line flushing.
+
+`PrintWriter(Writer out, boolean autoFlush)`  
+Creates a new PrintWriter.
