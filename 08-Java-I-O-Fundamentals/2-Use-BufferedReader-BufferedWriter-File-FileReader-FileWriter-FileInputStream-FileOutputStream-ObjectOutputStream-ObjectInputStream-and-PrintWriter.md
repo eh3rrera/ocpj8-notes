@@ -121,28 +121,29 @@ The other versions of the `write()` method are:
 `write(byte[] bytes)`. It writes all the bytes in the byte array to the OutputStream.
 `write(byte[] bytes, int offset, int length)`. It writes length number of bytes starting from offset from the byte array to the OutputStream.
 
-[BufferedInputStream](https://docs.oracle.com/javase/8/docs/api/java/io/BufferedInputStream.html)
+[BufferedReader](https://docs.oracle.com/javase/8/docs/api/java/io/BufferedReader.html)
 
-BufferedInputStream provides buffering to an input stream. Rather than read one byte at a time, BufferedInputStream reads a larger block at a time. 
+BufferedReader provides buffering to a character-input stream. Rather than read one byte at a time, BufferedReader reads a larger block at a time. 
 To add buffering to an InputStream just wrap it in a BufferedInputStream:
 ````java
-InputStream input = new BufferedInputStream(new FileInputStream("c:\\file.txt"));
+Reader r = new BufferedReader(new FileReader("c:\\file.txt"));
 ````
-The BufferedInputStream creates a byte array internally and fill it by calling the InputStream.read(byte[]) methods on the underlying InputStream. You can set the buffer size to use internally, for example to 1024 bytes, like this:
+The BufferedReader creates a byte array internally and fill it by calling the `read()` or `readLine()` methods on the underlying Reader. You can set the buffer size to use internally, for example to 1024 bytes, like this:
 ````java
-InputStream input = new BufferedInputStream(new FileInputStream("c:\\file.txt"), 1024);
+Reader r = new BufferedReader(new FileReader("c:\\file.txt"), 1024);
 ````
 
-[BufferedOutputStream](https://docs.oracle.com/javase/8/docs/api/java/io/BufferedOutputStream.html)
+[BufferedWriter](https://docs.oracle.com/javase/8/docs/api/java/io/BufferedWriter.html)
 
-BufferedOutputStream provides buffering to an output stream. To add buffering to an OutputStream just wrap it in a BufferedOutputStream:
+BufferedWriter provides buffering to a character-output stream. To add buffering to a Writer just wrap it in a BufferedWriter:
 ````java
-OutputStream input = new BufferedOutputStream(new FileOutputStream("c:\\file.txt"));
+BufferedWriter input = new BufferedWriter(new FileWriter("c:\\file.txt"));
 ````
 To set the size of the buffer, provide it as a constructor parameter like this:
 ````java
-OutputStream input = new BufferedOutputStream(new FileOutputStream("c:\\file.txt"), 1024);
+BufferedWriter input = new BufferedWriter(new FileWriter("c:\\file.txt"), 1024);
 ````
+Without buffering, each invocation of a `write()` or `newLine()` method would cause characters to be converted into bytes and written immediately to the file, which can be very inefficient.
 
 [ObjectInputStream](https://docs.oracle.com/javase/8/docs/api/java/io/ObjectInputStream.html)
 
