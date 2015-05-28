@@ -2,9 +2,9 @@
 Notes to study for the OCPJ 8 exam (1Z1-809)
 
 ## License
-The content is licensed under the [Creative Commons Attribution 4.0 International](http://creativecommons.org/licenses/by/4.0/) license.
+The content is licensed under the [Creative Commons Attribution-NonCommercial 4.0 International](http://creativecommons.org/licenses/by-nc/4.0/) license.
 
-Basically, you are free to share and adapt the content for any purpose (even commercially) just by giving appropriate credit.
+Basically, you are free to share and adapt the content for any purpose (except commercial) just by giving appropriate credit.
 
 ## Bibliography
 [Java SE 8 docs](http://docs.oracle.com/javase/8/docs/api/)
@@ -18,3 +18,5 @@ Basically, you are free to share and adapt the content for any purpose (even com
 [Tutorials Point](http://www.tutorialspoint.com/java/)
 
 [Level Up Lunch Tutorials](http://www.leveluplunch.com/java/tutorials/)
+
+[Benjamin Winterberg Java Articles](http://winterbe.com/java/)
