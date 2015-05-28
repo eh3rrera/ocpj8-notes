@@ -1,6 +1,6 @@
 #Use parallel Streams including reduction, decomposition, merging processes, pipelines and performance.
 
-You can execute streams in parallel so Java partitions the stream into multiple substreams. Aggregate operations iterate over and process these substreams in parallel and then combine the results.
+You can execute streams in parallel so Java partitions the stream into multiple substreams. Aggregate operations iterate over and process these substreams in parallel and then combine the results. It's important that the operations are stateless and can be executed in an arbitrary order.
 
 A stream is not parallel by default. To make a parallel stream, invoke the method `Collection.parallelStream` (if you're working with a collection) or `BaseStream.parallel`:
 ````java
@@ -9,9 +9,18 @@ l.parallelStream().forEach(System.out:println);
 // Or
 Stream.of("1", "2", "3").parallel().forEach(System.out:println);
 ````
+Parallel streams use a common ForkJoinPool available via the `ForkJoinPool.commonPool()` method. The size of the thread-pool depends on the amount of available physical CPU cores:
+````java
+ForkJoinPool commonPool = ForkJoinPool.commonPool();
+System.out.println(commonPool.getParallelism()); 
+````
+The value can be modified by setting the following JVM parameter to a non-negative integer:
+````java
+-Djava.util.concurrent.ForkJoinPool.common.parallelism=4
+````
 
 ###Reduction
-A reduction operation takes a sequence of elements and combines them into a single result by, such as finding the sum or maximum of a set of numbers, or accumulating elements into a list. So in addtion to `reduce()`, `collect()`, `sum()`, `max()`, or `count()` are also reduction operations.
+A reduction operation combines all elements into a single result, such as finding the sum or maximum of a set of numbers, or accumulating elements into a list. So in addtion to `reduce()`, `collect()`, `sum()`, `max()`, or `count()` are also reduction operations.
 
 The `reduce()` method has the following versions:
 ````java
