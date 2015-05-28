@@ -6,8 +6,8 @@ A BlockingQueue has four forms of methods:
 
 | | Throws Exception |	Special Value |	Blocks |	Times Out |
 |----|--------|-----------|----------|-------|
-|Insert |` add(o)` | `offer(o)` | `put(o)` | o`ffer(o, timeout, timeunit)`|
-|Remove | `remove(o)` | `poll()` | `take()` | `poll(timeout, timeunit)`|
+|Insert |` add(e)` | `offer(e)` | `put(e)` | `offer(e, timeout, timeunit)`|
+|Remove | `remove()` | `poll()` | `take()` | `poll(timeout, timeunit)`|
 |Examine | `element()`| `peek()` |  |  |
 
 **Throws Exception**: If the attempted operation is not possible immediately, an exception is thrown.  
@@ -76,13 +76,41 @@ public class Test {
 ````
 
 ###Blocking Deque
+The [BlockingDeque](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/BlockingDeque.html) interface in the java.util.concurrent class represents a thread-safe deque. A deque is a "Double Ended Queue", a queue which you can insert and take elements from, in both ends.
 
+The implementation of the BlockingDeque is:
+* [LinkedBlockingDeque](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/LinkedBlockingDeque.html). An optionally-bounded blocking deque based on linked nodes.
 
+Like a BlockingQueue, a BlockingDeque has four forms of methods:  
+For the First Element:
+
+| | Throws Exception |	Special Value |	Blocks |	Times Out |
+|----|--------|-----------|----------|-------|
+|Insert |` addFirst(e)` | `offerFirst(e)` | `putFirst(e)` | `offerFirst(e, timeout, timeunit)`|
+|Remove | `removeFirst()` | `pollFirst()` | `takeFirst()` | `pollFirst(timeout, timeunit)`|
+|Examine | `getFirst()`| `peekFirst()` |  |  |
+
+For the Las Element:
+
+| | Throws Exception |	Special Value |	Blocks |	Times Out |
+|----|--------|-----------|----------|-------|
+|Insert |` addLast(e)` | `offerLast(e)` | `putLast(e)` | `offerLast(e, timeout, timeunit)`|
+|Remove | `removeLast()` | `pollLast()` | `takeLast()` | `pollLast(timeout, timeunit)`|
+|Examine | `getLast()`| `peekLast()` |  |  |
+
+For example:
+````java
+BlockingDeque<String> deque = new LinkedBlockingDeque<>();
+deque.addFirst("a");
+deque.addLast("b");
+String b = deque.takeLast();
+String a = deque.takeFirst();
+````
 
 ###ConcurrentMap
 The [ConcurrentMap](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ConcurrentMap.html) interface represents a Map that can handle concurrent access.
 
-The implementations of the ConcurrentMap are:
+The implementation of the ConcurrentMap is:
 * (ConcurrentHashMap](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ConcurrentHashMap.html). A hash table supporting full concurrency of retrievals and high expected concurrency for updates. 
 
 Since it extends form Map, it has the same methods as a normal map and some others for concurrent access:
@@ -121,4 +149,67 @@ System.out.println(concurrentMap.get("key")); // It prints "value merged with ne
 
 
 ###ConcurrentNavigableMap
-* [ConcurrentSkipListMap](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ConcurrentSkipListMap.html)
+The [ConcurrentNavigableMap](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ConcurrentNavigableMap.html) interface is a [java.util.NavigableMap](https://docs.oracle.com/javase/8/docs/api/java/util/NavigableMap.html) with support for concurrent access and for its submaps. The submaps are the maps returned by various methods like `headMap()`, `subMap()` and `tailMap()`.
+
+The implementation of ConcurrentNavigableMap is:
+* [ConcurrentSkipListMap](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ConcurrentSkipListMap.html). A scalable concurrent ConcurrentNavigableMap implementation. The map is sorted according to the natural ordering of its keys, or by a Comparator provided at map creation time, depending on which constructor is used.
+
+The `headMap(T toKey)` method returns a view of the map containing the keys which are strictly less than the given key. Changes to the original map are reflected in the head map:
+````java
+ConcurrentNavigableMap<String, String> map = new ConcurrentSkipListMap<>();
+map.put("1", "one");
+map.put("2", "two");
+map.put("3", "three");
+ConcurrentNavigableMap headMap = map.headMap("2");
+````
+headMap contains a ConcurrentNavigableMap with the key "1", since only this key is strictly less than "2".
+
+The `tailMap(T fromKey)` method returns a view of the map containing the keys which are greater than or equal to the given fromKey.Changes to the original map are reflected in the head map:
+````java
+ConcurrentNavigableMap<String, String> map = new ConcurrentSkipListMap<>();
+map.put("1", "one");
+map.put("2", "two");
+map.put("3", "three");
+ConcurrentNavigableMap tailMap = map.tailMap("2");
+````
+tailMap contains the keys "2" and "3" because these two keys are greather than or equal to "2".
+
+The `subMap()` method returns a view of the original map which contains all keys from (including) to (excluding) two keys given as parameters to the method:
+````java
+ConcurrentNavigableMap<String, String> map = new ConcurrentSkipListMap<>();
+map.put("1", "one");
+map.put("2", "two");
+map.put("3", "three");
+ConcurrentNavigableMap subMap = map.subMap("2", "3");
+````
+submap contains only the key "2", because only this key is greater than or equal to "2" and smaller than "3".
+
+###CyclicBarrier
+The [CyclicBarrier](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CyclicBarrier.html) class is a synchronization mechanism that allows a set of threads to all wait for each other to reach a common barrier point. The barrier is called cyclic because it can be re-used after the waiting threads are released.
+
+The waiting threads waits at the CyclicBarrier until either:
+* The last thread arrives (calls `await()`)
+* The thread is interrupted by another thread (another thread calls its interrupt() method)
+* Another waiting thread is interrupted
+* Another waiting thread times out while waiting at the CyclicBarrier
+* The `CyclicBarrier.reset()` method is called by some external thread.
+
+When you create a CyclicBarrier you specify how many threads are to wait at it, before releasing them:
+````java
+CyclicBarrier barrier = new CyclicBarrier(2);
+````
+The CyclicBarrier supports a barrier action, which is a Runnable that is executed once the last thread arrives. You pass tit in its constructor:
+````java
+Runnable barrierAction = () -> System.out.println("Barrier Action") ;
+CyclicBarrier barrier = new CyclicBarrier(2, barrierAction);
+````
+
+And here is how a thread waits at a CyclicBarrier:
+````java
+barrier.await();
+// Specifying a 20 seconds timeout to release the threads, even if not all threads are waiting at the CyclicBarrier
+barrier.await(10, TimeUnit.SECONDS);
+````
+You can see a complete example in the [javadoc](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CyclicBarrier.html).
+
+###CopyOnWriteArrayList
