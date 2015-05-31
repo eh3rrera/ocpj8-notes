@@ -1,5 +1,5 @@
 #Use enumerated types including methods, and constructors in an enum type
-Enumerated types (or enums) are classes that can be used to define a set of constants. They are type-safe, meaning that you can not assign anything else other than the predefined constants to an enum variable.
+Enumerated types (or enums) are classes that can be used to define a set of constants. They are type-safe, meaning that you cannot assign anything else other than the predefined constants to an enum variable.
 
 Here's an example:
 ````java
@@ -15,7 +15,7 @@ Colors color = Colors.BLUE;
 ````
 Enums extend from `java.lang.Enum` implicitly, so they cannot extend another class. But they can implement an interface and override any method like normal class.
 
-You can specify values of enum constants at the creation time, but you need to defined a constructor for this and, optionally, a method to get these values, for example:
+You can specify values of enum constants at the creation time, but you need to define a constructor for this and, optionally, a method to get these values, for example:
 ````java
 public enum Colors {
     RED("#ff0000"),
@@ -37,7 +37,7 @@ And the method is used like this:
 ````java
 String value = Colors.BLUE.getHexValue();
 ````
-If a enum contains attributes and methods, their definition  must always come after the list of constants in the enum and the list of constants must be terminated by a semicolon.
+If an enum contains attributes and methods, their definition  must always come after the list of constants in the enum and the list of constants must be terminated by a semicolon.
 
 The constructor of an enum must be private, any other access modifier will result in compilation error. For this reason, you cannot create an instance of an enum by using the *new* operator.
 
