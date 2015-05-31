@@ -12,7 +12,7 @@ int result = comp.compare("hello", "world");
 
 Java classes that have a natural ordering implement the *Comparable* interface (like *String*, *Integer*, *BigInteger*, etc).
 
-The *Comparator* interface is tipically used for sorting data structures such as *TreeMap* and *TreeSet* or to be passed to a sort method (such as `Collections.sort` or `Arrays.sort`).
+The *Comparator* interface is typically used for sorting data structures such as *TreeMap* and *TreeSet* or to be passed to a sort method (such as `Collections.sort` or `Arrays.sort`).
 
 Both methods return:
 0 if the objects are equal (this have to be consistent with the equals() method)
