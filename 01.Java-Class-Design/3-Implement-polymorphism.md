@@ -31,6 +31,6 @@ public class Test {
   }
 }
 ````
-The first `System.out.println(a.eat());` will print *Dog Food* since in that moment, the *a* reference is holding a *Dog* object. In the second call, it will print *Cat Food*, since now the refence holds a *Cat* object.
+The first `System.out.println(a.eat());` will print *Dog Food* since in that moment, the *a* reference is holding a *Dog* object. In the second call, it will print *Cat Food*, since now the reference holds a *Cat* object.
 
 So polymorphism can help make code easier to change. If you have a fragment of code that uses a variable of a superclass type, such as *Animal*, you could later create a brand new subclass with another behavior, such as *Spider*, polymorphism will ensure that *Spider*'s implementation of *Animal*'s method gets executed and the fragment will work without change. 
