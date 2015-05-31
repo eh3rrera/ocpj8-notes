@@ -32,7 +32,7 @@ IntStream mapToInt(ToIntFunction<? super T> mapper)
 LongStream mapToLong(ToLongFunction<? super T> mapper)
 DoubleStream mapToDouble(ToDoubleFunction<? super T> mapper)
 ````
-These methods can be used when you want a stream of these primitives types. For example, consider a stream of elements of this type:
+These methods can be used when you want a stream of these primitive types. For example, consider a stream of elements of this type:
 ````java
 class Employee {
   private int id;
