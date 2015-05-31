@@ -1,3 +1,4 @@
+#Create inner classes including static inner class, local class, nested class, and anonymous inner class
 An inner class is a class declared inside another class.
  
 ###Static Inner Class
@@ -24,7 +25,7 @@ public class Test {
 ````
 
 The rules of a static nested class are:
-* Nested static clases don't need a reference of their outer class (the enclosing class)
+* Nested static classes don't need a reference of their outer class (the enclosing class)
 * Only static members of the outer class are accessible in a nested static class
 
 ###Local Inner Class
@@ -81,7 +82,7 @@ public class Test {
 ````
 
 The rules of a nested class are:
-* Nested  clases need a reference of their outer class
+* Nested  classes need a reference of their outer class
 * Static and non-static members of the outer class are accessible in a nested  class
 * If the nested class is used inside the class that defines it, the keyword this can be used to create an instance of the nested class (for example `OuterClass.NestedClass nc = this.new NestedClass();`)
 
@@ -106,7 +107,7 @@ public class Test {
     }
 }
 ````
-This example defines three variables named x, the member variable of the class Test, the member variable of the inner class Inner, and the parameter in the method m. The variable x defined as a parameter of the method shadows the variable of the inner class. So, when you use the variable x in the method m, it refers to the method parameter. To refer to the member variable of the inner class Inner, use the keyword this to represent the enclosing scope.To refer to member variables that enclose larger scopes, use the class name to which they belong. The output of the example is:
+This example defines three variables named x, the member variable of the class Test, the member variable of the inner class Inner, and the parameter in the method m. The variable x defined as a parameter of the method shadows the variable of the inner class. So, when you use the variable x in the method m, it refers to the method parameter. To refer to the member variable of the inner class Inner, use the keyword this to represent the enclosing scope. To refer to member variables that enclose larger scopes, use the class name to which they belong. The output of the example is:
 ````
 x = 5
 this.x = 1
