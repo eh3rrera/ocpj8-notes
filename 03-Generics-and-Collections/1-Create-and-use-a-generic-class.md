@@ -13,7 +13,7 @@ t1.m("a");
 Test<Integer> t2 = new T<>();
 t2.m(1);
 ````
-Notice that the generic parameter on the right is optional, it can be infered by the compiler using the reference declaration.
+Notice that the generic parameter on the right is optional, it can be inferred by the compiler using the reference declaration.
 
 So generics are a mechanism for type checking, for example, when we create an instance of *List<String>*:
 ````java
@@ -69,7 +69,7 @@ l.add(new Animal());
 l.add(new Dog());
 l.add(new Cat());
 ````
-However, to get elements from the list, you must cast the result to *Object*, since the elements could be of any type that is either an *Animal* or a superclass, but it is not possible to know exactly which. The only thing you know for sure, is that any class is a subclass of *Object*:
+However, to get elements from the list, you must cast the result to *Object*, since the elements could be of any type that is either an *Animal* or a superclass, but it is not possible to know exactly which. The only thing you know for sure is that any class is a subclass of *Object*:
 ````java
 List<? super Animal> l = new ArrayList<>();
 for(Object o : l){
