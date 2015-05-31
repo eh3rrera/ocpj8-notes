@@ -51,7 +51,7 @@ public class Singleton{
 }
 ````
 
-###Inmutable objects
+###Immutable objects
 Immutable objects are simply objects whose state (data) cannot change after construction, for examples the String class. They are useful in concurrent applications, since they cannot change state, they cannot be corrupted by threads.
 
 There are several ways for creating immutable objects:
