@@ -19,7 +19,7 @@ public class Truck implements Vehicle {
     }
 }
 ````
-A class that implements an interface must implement all the methods declared in the interface. The only exception are default methods. Java 8 introduces this feature, that provides the flexibility to allow an interface to define an implementation which will be used as default in the situation where a class fails to provide an implementation for that method.
+A class that implements an interface must implement all the methods declared in the interface. The only exception is default methods. Java 8 introduces this feature, which provides the flexibility to allow an interface to define an implementation which will be used as default in the situation where a class fails to provide an implementation for that method.
 
 This is made by adding the keyword `default` before the method's access modifier and adding the implementation inside interface:
 ````java
@@ -32,7 +32,7 @@ interface Vehicle {
 class Car implements Vehicle {
     // valid in Java 8
 }
-````java
+````
 
 Once a class implements an interface, an instance of that class can be assigned to a reference of the interface type:
 ````java
@@ -85,7 +85,7 @@ public class Man
 If a class implements *Behavior*, it has to implement all methods defined in both *Run* and *Sleep* interfaces.
 
 ###atOverride Annotation
-Whe you use the `@Override` annotation, the compiler checks to make sure you're actually overriding a method. For example, if you misspell the method name or not match the parameters correctly, you will be warned that you're not actually overriding a method of the superclass.  
+When you use the `@Override` annotation, the compiler checks to make sure you're actually overriding a method. For example, if you misspell the method name or not match the parameters correctly, you will be warned that you're not actually overriding a method of the superclass.  
 
 The most common use case for `@Override` is with *Object* methods:
 ````java
