@@ -76,7 +76,7 @@ public class Square {
 ````
 
 ###Static Classes
-We can define a class within another class. Such a class is called a nested class. We can’t make a top level class static. Only nested classes can be static.
+We can define a class within another class. Such a class is called a nested class. We can't make a top level class static. Only nested classes can be static.
 
 ````java
 class OuterClass {
@@ -100,5 +100,5 @@ public class Test {
 ````
 
 The characteristics of a static nested class are:
-* Nested static clases don't need a reference of their outer class (the enclosing class)
+* Nested static classes don't need a reference of their outer class (the enclosing class)
 * Only static members of the outer class are accessible in a nested static class
