@@ -5,7 +5,7 @@ The final keyword can be used in variables, methods and classes.
 ###Final Variable
 If you make a variable final, you cannot change the value of final variable (sort of a constant) after is initialized. It can only be initialized in the constructor or when it's declared. If it's static, it will be initialized in a static block or when it's declared.
 
-If the variable holds an object, it cannot be assigned to another objects, but the attributes of that object can be changed.
+If the variable holds an object, it cannot be assigned to other objects, but the attributes of that object can be changed.
 ````java
 class Car {  
  final int speed = 70; 
