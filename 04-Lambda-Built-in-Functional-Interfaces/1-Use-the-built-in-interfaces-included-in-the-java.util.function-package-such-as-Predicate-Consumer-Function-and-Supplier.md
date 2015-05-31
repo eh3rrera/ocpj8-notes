@@ -4,7 +4,7 @@ Functional interfaces provide target types for lambda expressions and method ref
 ###Predicate
 A predicate is a statement that may be true or false depending on the values of its variables. It can be thought of as a function that returns a value that is either true or false.
 
-In java 8, a *Predicate* is a functional interface that can be used anywhere you need to evaluate a boolean condition. Since it's a functional interface, you can pass a lambda expressions wherever a *Predicate* is expected.
+In java 8, a *Predicate* is a functional interface that can be used anywhere you need to evaluate a boolean condition. Since it's a functional interface, you can pass a lambda expression wherever a *Predicate* is expected.
 
 See the [API](https://docs.oracle.com/javase/8/docs/api/java/util/function/Predicate.html) to know the methods of this interface.
 
@@ -44,7 +44,7 @@ Here, the filter method expects a *Predicate*, so we can pass a lambda expressio
 ````
 
 ###Consumer
-This functional interface represents an operation that accepts a single input argument and returns no result. The real outcome is the side-effects it produces. Since it's a functional interface, you can pass a lambda expressions wherever a *Consumer* is expected.
+This functional interface represents an operation that accepts a single input argument and returns no result. The real outcome is the side-effects it produces. Since it's a functional interface, you can pass a lambda expression wherever a *Consumer* is expected.
 
 See the [API](https://docs.oracle.com/javase/8/docs/api/java/util/function/Consumer.html) to know the methods of this interface.
 
@@ -77,7 +77,7 @@ Basically, what *Consumer* does is executing the assigned lambda expression. The
 ````
 
 ###Function
-This functional interface a function that accepts one argument and produces a result. One use for example, it's  to convert or transform from one object to another. Since it's a functional interface, you can pass a lambda expressions wherever a *Function* is expected.
+This functional interface represents a function that accepts one argument and produces a result. One use for example, it's  to convert or transform from one object to another. Since it's a functional interface, you can pass a lambda expression wherever a *Function* is expected.
 
 See the [API](https://docs.oracle.com/javase/8/docs/api/java/util/function/Function.html) to know the methods of this interface.
 
@@ -104,7 +104,7 @@ The input parameter type and the return type of the method can either be same or
 ````
 
 ###Supplier
-This functional interface does the opposite of the *Consumer*, it takes no arguments but it returns some value. It may return different values when it is being called more than once. Since it's a functional interface, you can pass a lambda expressions wherever a *Supplier* is expected.
+This functional interface does the opposite of the *Consumer*, it takes no arguments but it returns some value. It may return different values when it is being called more than once. Since it's a functional interface, you can pass a lambda expression wherever a *Supplier* is expected.
 
 See the [API](https://docs.oracle.com/javase/8/docs/api/java/util/function/Supplier.html) to know the one method of this interface.
 
