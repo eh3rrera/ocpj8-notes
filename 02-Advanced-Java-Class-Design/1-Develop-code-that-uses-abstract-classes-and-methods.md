@@ -36,6 +36,6 @@ Use abstract classes when:
 * You want to declare non-static or non-final fields. This enables you to define methods that can access and modify the state of the object to which they belong.
 
 Use interfaces when:
-* You expect that unrelated classes would implement your interface. For example, the interfaces Comparable and Cloneable are implemented by many unrelated classes.
+* You expect that unrelated classes would implement your interface. For example, the interfaces *Comparable* and *Cloneable* are implemented by many unrelated classes.
 * You want to specify the behavior of a particular data type, but not concerned about who implements its behavior.
 * You want to take advantage of multiple inheritance of type.
