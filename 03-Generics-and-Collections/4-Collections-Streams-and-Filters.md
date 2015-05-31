@@ -18,9 +18,9 @@ Besides regular object streams, Java 8 brings special kinds of streams for worki
 IntStream.range(1, 10)
     .forEach(System.out::println);
 ````
-Streams cannot be reused. As soon as you call any terminal operation the stream is closed. Terminal operations return either a void or non-stream result, like the `forEach()` method. To overcome this limitation, we have to to create a new stream chain for every terminal operation we want to execute.
+Streams cannot be reused. As soon as you call any terminal operation the stream is closed. Terminal operations return either a void or non-stream result, like the `forEach()` method. To overcome this limitation, we have to create a new stream chain for every terminal operation we want to execute.
 
-Before Java 8, we used for loops or iterators to iterate through the collections and filter them. In Java 8, stream operations has methods like foreach, map, filter, etc. which internally iterates through the elements.
+Before Java 8, we used for loops or iterators to iterate through the collections and filter them. In Java 8, stream operations have methods like foreach, map, filter, etc. which internally iterates through the elements.
 For example:
 ````java
 List<String> names = newArrayList<>();
