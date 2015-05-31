@@ -10,7 +10,7 @@ We can substitue the lambda expression with a method reference like this:
 List<String> l = new ArrayList<>();
 l.stream().forEach(System.out::println);
 ````
-Notice how :: is used to call the method and that no parameters are passed, since the compiler infers them along with their type.
+Notice how **::** is used to call the method and that no parameters are passed, since the compiler infers them along with their type.
 
 There are four types of method references (assuming a class named Person with a `getName()` method and a variable named p of that type):
 
