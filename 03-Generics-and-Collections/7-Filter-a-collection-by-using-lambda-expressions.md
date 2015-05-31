@@ -1,6 +1,6 @@
 #Filter a collection by using lambda expressions
 
-The way to filter collections is through the use of a [Predicate](https://docs.oracle.com/javase/8/docs/api/java/util/function/Predicate.html), which is basically something that return a boolean value.
+The way to filter collections is through the use of a [Predicate](https://docs.oracle.com/javase/8/docs/api/java/util/function/Predicate.html), which is basically something that returns a boolean value.
 
 *Predicate* is a functional interface, which means that wherever an implementation of this interface is expected, we can pass a lambda expression.
 
