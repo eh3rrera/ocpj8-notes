@@ -20,7 +20,7 @@ This is a short-circuiting terminal operation that returns whether all elements 
 `boolean noneMatch(Predicate<? super T> predicate)`
 This is a short-circuiting terminal operation that returns whether no elements of this stream match the provided predicate.  If the stream is empty then true is returned and the predicate is not evaluated.
 
-A short-circuiting terminal operation basically means that there's no need to process the entire stream to return a result. As soon as an element that fits the predicate is found or that a result can be infered, the result is return.
+A short-circuiting terminal operation basically means that there's no need to process the entire stream to return a result. As soon as an element that fits the predicate is found or that a result can be inferred, the result is return.
 
 Here's an example:
 ````java
