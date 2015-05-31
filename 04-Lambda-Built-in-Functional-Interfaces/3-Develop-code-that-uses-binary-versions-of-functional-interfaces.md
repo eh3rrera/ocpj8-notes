@@ -23,7 +23,7 @@ Here's a summary of the binary versions of the functional interfaces along with 
 [ToLongBiFunction&lt;T, U&gt;](https://docs.oracle.com/javase/8/docs/api/java/util/function/ToLongBiFunction.html). Function that accepts two arguments and produces a long-valued result.  
 [ToDoubleBiFunction&lt;T, U&gt;](https://docs.oracle.com/javase/8/docs/api/java/util/function/ToDoubleBiFunction.html). Function that accepts two arguments and produces a double-valued result.
 
-**BinaryOperator&lt;T&gt;**
-[IntBinaryOperator](https://docs.oracle.com/javase/8/docs/api/java/util/function/IntBinaryOperator.html). Function operation upon two int-valued operands and producing an int-valued result.
-[LongBinaryOperator](https://docs.oracle.com/javase/8/docs/api/java/util/function/LongBinaryOperator.html). Function operation upon two long-valued operands and producing a long-valued result.
+**BinaryOperator&lt;T&gt;**  
+[IntBinaryOperator](https://docs.oracle.com/javase/8/docs/api/java/util/function/IntBinaryOperator.html). Function operation upon two int-valued operands and producing an int-valued result.  
+[LongBinaryOperator](https://docs.oracle.com/javase/8/docs/api/java/util/function/LongBinaryOperator.html). Function operation upon two long-valued operands and producing a long-valued result.  
 [DoubleBinaryOperator](https://docs.oracle.com/javase/8/docs/api/java/util/function/DoubleBinaryOperator.html). Function operation upon two double-valued operands and producing a double-valued result.
