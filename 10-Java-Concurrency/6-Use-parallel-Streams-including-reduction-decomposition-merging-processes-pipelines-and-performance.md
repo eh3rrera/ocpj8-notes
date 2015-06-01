@@ -20,7 +20,7 @@ The value can be modified by setting the following JVM parameter to a non-negati
 ````
 
 ###Reduction
-A reduction operation combines all elements into a single result, such as finding the sum or maximum of a set of numbers, or accumulating elements into a list. So in addtion to `reduce()`, `collect()`, `sum()`, `max()`, or `count()` are also reduction operations.
+A reduction operation combines all elements into a single result, such as finding the sum or maximum of a set of numbers, or accumulating elements into a list. So in addition to `reduce()`, `collect()`, `sum()`, `max()`, or `count()` are also reduction operations.
 
 The `reduce()` method has the following versions:
 ````java
