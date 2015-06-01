@@ -155,7 +155,7 @@ executorService.shutdown();
 ````
 
 ####submit(Callable)
-This version of the method takes a Callable, and returns a Future object with a result when if has finished executing:
+This version of the method takes a Callable, and returns a Future object with a result when it has finished executing:
 ````java
 Future future = executorService.submit(new Callable<String>() {
     public String call() {
@@ -189,7 +189,7 @@ String result = executorService.invokeAny(callables);
 System.out.println(result);
 executorService.shutdown();
 ````
-Some times it will print "Callable 1", some times "Callable 2", and other times "Callable 3".
+Sometimes it will print "Callable 1", sometimes "Callable 2", and other times "Callable 3".
 
 ####invokeAll(Collection<? extends Callable<T>>)
 This method executes the given tasks, returning a list of Futures holding their status and results when all complete. `Future.isDone()` is true for each element of the returned list. A completed task could have terminated either normally or by throwing an exception:
