@@ -50,10 +50,10 @@ public class TestThread {
 ````
 
 ###Starvation
-Lock starvation occurs when a thread, having lesser priority than other ones, is constantly waiting for a lock, never able to take it because other thread(s) with higher priority are constanly acquiring the lock.
+Lock starvation occurs when a thread, having lesser priority than other ones, is constantly waiting for a lock, never able to take it because other thread(s) with higher priority are constantly acquiring the lock.
 
 ###Livelock
-A LiveLock is like a deadlock in the sense that two (or more) threads are blocking each others. But with the livelock, each thread is waiting "actively", trying to resolve the problem on its own. A live lock occurs when the combination of these processes's efforts to resolve the problem makes it impossible for them to ever terminate. For example, if two threads detect a deadlock, and try to "step aside" for each other, without care they will end up being stuck in a loop always "stepping aside" and never managing to move forwards.
+A LiveLock is like a deadlock in the sense that two (or more) threads are blocking each others. But with the livelock, each thread is waiting "actively", trying to resolve the problem on its own. A live lock occurs when the combination of these processes' efforts to resolve the problem makes it impossible for them to ever terminate. For example, if two threads detect a deadlock, and try to "step aside" for each other, without care they will end up being stuck in a loop always "stepping aside" and never managing to move forwards.
 
 ###Race conditions
-A race condition is the situation where two threads compete for the same resource and they try to change it at the same time, doing it in a way that causes unexpected results.. The problem happens when for example, one thread checks if the value is X, then do something that depends on that value and another thread does something to the value in between the check and the do.
+A race condition is the situation where two threads compete for the same resource and they try to change it at the same time, doing it in a way that causes unexpected results. The problem happens when for example, one thread checks if the value is X, then do something that depends on that value and another thread does something to the value in between the check and the do.
