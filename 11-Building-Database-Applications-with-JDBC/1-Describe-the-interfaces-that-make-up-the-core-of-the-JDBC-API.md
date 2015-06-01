@@ -10,7 +10,7 @@
 
 [ResultSet](https://docs.oracle.com/javase/8/docs/api/java/sql/ResultSet.html). Object used for retrieving and updating the results of a query.
 
-To use the JDBC API with a particular DBMS, you need a JDBC driver to establish the comunication between Java and the database. JDBC drivers are divided into four types:
+To use the JDBC API with a particular DBMS, you need a JDBC driver to establish the communication between Java and the database. JDBC drivers are divided into four types:
 
 Type 1: JDBC-ODBC (Open Database Connectivity) Bridge  
 Type 2: Native-API, partly Java driver  
@@ -23,7 +23,7 @@ All JDBC drivers implement four JDBC interfaces:
 * Statement
 * ResultSet.
 
-The DriverManager class tracks the loaded JDBC drivers and create the database connections. Before JDBC 4.0, the Driver class was loaded with this code:
+The DriverManager class tracks the loaded JDBC drivers and creates the database connections. Before JDBC 4.0, the Driver class was loaded with this code:
 ````java
 Class.forName("com.jw.client.JWDriver");
 ````
