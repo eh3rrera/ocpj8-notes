@@ -1,7 +1,7 @@
 #Create and manage date-based and time-based events including a combination of date and time into a single object using LocalDate, LocalTime, LocalDateTime, Instant, Period, and Duration
 
 The new Date/Time API was designed with the following principles:
-* Inmutable classes
+* Immutable classes
 * Dates and times are separated 
 * Support for different calendaring systems
 
@@ -30,7 +30,7 @@ int h = LocalTime.getHour();
 int min = LocalTime.getMinute();
 ````
 
-You can also modify the object values by using the *with* methods instead of using setters (because the classes are inmutables, which also means that you don't actually modify a class, a new one is returned):
+You can also modify the object values by using the *with* methods instead of using setters (because the classes are immutable, which also means that you don't actually modify a class, a new one is returned):
 ````java
 LocalDateTime thePast = dt.withDayOfYear(90).withHour(21);
 ````
@@ -80,7 +80,7 @@ LocalDate newDate = date.plus(period);
 ````
 
 ###Duration
-A duration is similar to a period but its precision is based on hours, minutes, seconds, miliseconds. 
+A duration is similar to a period but its precision is based on hours, minutes, seconds, milliseconds. 
 
 A duration can be created using an amount of seconds or minutes or hours or by specifying an start and end times:
 ````java
