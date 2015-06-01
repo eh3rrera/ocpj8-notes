@@ -30,7 +30,7 @@ javac -source 1.7 Test.java
 javac -source 7 Test.java
 javac Test.java
 ````
-The compilation will fail is assert is used as an identifier.
+The compilation will fail if assert is used as an identifier.
 
 So compilation is the first step to use assertions. But to execute the assertion checks, you have to enable them with:
 ````
@@ -41,7 +41,7 @@ or
 java -enableassertions com.example.Test
 ````
 
-The default behaviour is run the code with assertions disabled, but the commands to explicitly disabling assertions are:
+The default behavior is to run the code with assertions disabled, but the commands to explicitly disabling assertions are:
 ````
 java -da com.example.Test
 ````
@@ -59,12 +59,12 @@ java -ea -da:com.example.util... com.example.Test
 ````
 To disable assertions for the com.example.util package and all of its subpackages.
 
-But no all uses of assertions are considered appropiate. Here are the rules:
-* Don't use assertions tovValidate arguments to a public method
+But no all uses of assertions are considered appropriate. Here are the rules:
+* Don't use assertions to validate arguments to a public method
 * Use assertions to validate arguments to a private method
 * Don't use assertions to validate command-line arguments
 * Use assertions, even in public methods, to check for cases that are never supposed to happen
-* Don't sse assert expressions that can cause side effects. For example:
+* Don't use assert expressions that can cause side effects. For example:
 
   ````java
   private void m(List<Integer> l) {
