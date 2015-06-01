@@ -49,4 +49,4 @@ List<String> students = courses.stream()
                 .collect(Collectors.toList());
 ````
 
-There are another examples in the [javadoc](https://docs.oracle.com/javase/8/docs/api/java/util/stream/Stream.html#flatMap-java.util.function.Function-) of the method.
+There are other examples in the [javadoc](https://docs.oracle.com/javase/8/docs/api/java/util/stream/Stream.html#flatMap-java.util.function.Function-) of the method.
