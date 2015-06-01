@@ -60,7 +60,7 @@ Instant twoSecondsBefore = now.minusSeconds(2);
 ````
 
 ###Period
-A period represents a value such as “1 months and 15 days", in contrast to the other classes that represent a point in time.
+A period represents a value such as "1 months and 15 days", in contrast to the other classes that represent a point in time.
 
 Here are some ways to create a period:
 ````java
