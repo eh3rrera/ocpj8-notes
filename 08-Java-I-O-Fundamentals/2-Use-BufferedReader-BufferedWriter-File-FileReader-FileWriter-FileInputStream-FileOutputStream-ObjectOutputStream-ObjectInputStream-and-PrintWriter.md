@@ -2,7 +2,7 @@
 
 [File](https://docs.oracle.com/javase/8/docs/api/java/io/File.html)
 
-This class is a representation of a file or a directory pathnames. Its instaces are immutable, that is, once created, the abstract pathname represented by the object will never change.
+This class is a representation of a file or a directory pathnames. Its instances are immutable, that is, once created, the abstract pathname represented by the object will never change.
 
 You can create an instance this way:
 ````java
@@ -147,7 +147,7 @@ Without buffering, each invocation of a `write()` or `newLine()` method would ca
 
 [ObjectInputStream](https://docs.oracle.com/javase/8/docs/api/java/io/ObjectInputStream.html)
 
-ObjectInputStream allows you to read serialized objects (their class must implement java.io.Serializable) from an InputStream instead of only bytes. You wrap an InputStream in a ObjectInputStream like this:
+ObjectInputStream allows you to read serialized objects (their class must implement java.io.Serializable) from an InputStream instead of only bytes. You wrap an InputStream in an ObjectInputStream like this:
 ````java
 class Test implements java.io.Serializable {}
 ...
@@ -158,7 +158,7 @@ input.close();
 
 [ObjectOutputStream](https://docs.oracle.com/javase/8/docs/api/java/io/ObjectOutputStream.html)
 
-ObjectOutputStream allows you to write serialized objects (their class must implement java.io.Serializable) from an OutputStream instead of only bytes. You wrap an OutputStream in a ObjectOutputStream like this:
+ObjectOutputStream allows you to write serialized objects (their class must implement java.io.Serializable) from an OutputStream instead of only bytes. You wrap an OutputStream in an ObjectOutputStream like this:
 ````java
 class Test implements java.io.Serializable {}
 ...
