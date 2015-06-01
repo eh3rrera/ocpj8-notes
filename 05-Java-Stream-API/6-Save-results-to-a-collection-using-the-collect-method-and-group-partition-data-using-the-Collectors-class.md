@@ -1,5 +1,5 @@
 #Save results to a collection using the collect method and group/partition data using the Collectors class
-Streams hava the following method:
+Streams have the following method:
 ````java
 collect(Collector<? super T,A,R> collector)
 ````
@@ -12,7 +12,7 @@ A collect operation requires three functions:
 * An accumulator function to incorporate an input element into a result container
 * A combining function to merge the contents of one result container into another.
 
-In fact, streams also have the following method that takes the above funtions to create our own collect operations:
+In fact, streams also have the following method that takes the above functions to create our own collect operations:
 ````java
 collect(Supplier<R> supplier, BiConsumer<R,? super T> accumulator, BiConsumer<R,R> combiner)
 ````
@@ -42,7 +42,7 @@ List<String> word = letters.stream().collect(() -> new ArrayList<>(),
                                     (c1, c2) -> c1.addAll(c2));
 ````
 
-However, there's a class, [Collectors](https://docs.oracle.com/javase/8/docs/api/java/util/stream/Collectors.html), that implement many useful reduction operations. So using Collectors, the code becomes simpler:
+However, there's a class, [Collectors](https://docs.oracle.com/javase/8/docs/api/java/util/stream/Collectors.html), which implements many useful reduction operations. So using Collectors, the code becomes simpler:
 ````java
 List<String> letters = new ArrayList<>();
 letters.add("H");
