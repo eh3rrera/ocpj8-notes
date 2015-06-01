@@ -14,7 +14,7 @@ try (Stream<Path> stream = Files.list(Paths.get("c:\\data"))) {
         .forEach(System.out::println);
 }
 ````
-The example maps each path to it's string representation, filter the results (only files ending in .txt) and print them.Streams implement AutoCloseable, so the try-with-resources block should be used to ensure that the stream's close method is invoked after the stream operations are completed.
+The example maps each path to its string representation, filter the results (only files ending in .txt) and print them. Streams implement AutoCloseable, so the try-with-resources block should be used to ensure that the stream's close method is invoked after the stream operations are completed.
 
 ###Find and Walk
 ````java
