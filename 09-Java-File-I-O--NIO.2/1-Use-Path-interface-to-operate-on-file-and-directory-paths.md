@@ -2,7 +2,7 @@
 
 The [Path](https://docs.oracle.com/javase/8/docs/api/java/nio/file/Path.html) interface defines an object that represents the path to a file or a directory. 
 
-A Path object has a root component and a hierarchical sequence of names separated by backslashes (in Windows) or slashes (Unix/Linux). The root component identifies the file system being used, for example, a drive letter. The names represents the directories needed to navigate to the target file or directory. The last name in the sequence represents the name of the target file or directory.
+A Path object has a root component and a hierarchical sequence of names separated by backslashes (in Windows) or slashes (Unix/Linux). The root component identifies the file system being used, for example, a drive letter. The names represent the directories needed to navigate to the target file or directory. The last name in the sequence represents the name of the target file or directory.
 
 To create a Path object you can use the the get method of the Paths class like this:
 ````java
@@ -20,7 +20,7 @@ Path p1 = Paths.get("c:\\data\\.\\file.txt"); // refers to c:\data\file.txt
 Path p2 = Paths.get("c:\\data\\examples\\..\\file.txt"); // refers to c:\data\file.txt
 ````
 
-The `normalize()` method of the Path interface can normalize a path, meaning that it removes all the . and .. in the path and resolves to the real path it refers to. 
+The `normalize()` method of the Path interface can normalize a path, meaning that it removes all the **.** and **..** in the path and resolves to the real path it refers to. 
 
 You can convert a relative path to an absolute path like this:
 ````java
