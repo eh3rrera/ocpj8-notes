@@ -217,4 +217,4 @@ The [CopyOnWriteArrayList](https://docs.oracle.com/javase/8/docs/api/java/util/c
 
 The iterator of CopyOnWriteArrayList is fail-safe and doesn't throw a ConcurrentModificationException even if underlying CopyOnWriteArrayList is modified once the iteration begins, because the iterator is operating on separate copy of ArrayList. For that reason, all the updates made on CopyOnWriteArrayList are not available to the iterator. However, element-changing operations on iterators themselves (remove, set, and add) are not supported. These methods throw an UnsupportedOperationException.
 
-With CopyOnWriteArrayList, there is no lock on read, so this operation is faster. Because of this, CopyOnWriteArrayList is most useful when you have few updates and inserts and many concurrent reads than using for example, Collections.synchronizedList(arrayList).
+With CopyOnWriteArrayList, there is no lock on read, so this operation is faster. Because of this, CopyOnWriteArrayList is most useful when you have few updates and inserts and many concurrent reads than using for example, `Collections.synchronizedList(arrayList)`.
