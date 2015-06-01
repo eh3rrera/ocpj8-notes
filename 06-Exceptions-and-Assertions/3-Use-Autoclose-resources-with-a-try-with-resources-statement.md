@@ -12,14 +12,14 @@ try {
 }
 ```` 
 
-However, Java 7 introduced the try-with-resources statement, that ensures that each resource is closed at the end of the statement. Any object that implements java.lang.AutoCloseable, which includes all objects which implement java.io.Closeable, can be used as a resource. The above example can be rewritten with a try-with-resources statement like this:
+However, Java 7 introduced the try-with-resources statement, which ensures that each resource is closed at the end of the statement. Any object that implements `java.lang.AutoCloseable`, which includes all objects which implement `java.io.Closeable`, can be used as a resource. The above example can be rewritten with a try-with-resources statement like this:
 ````java
 try (BufferedReader br = new BufferedReader(new FileReader(path))) {
         return br.readLine();
     }
 ````
 
-But there's a subtle difference between these two try blocks. If the methods `readLine()` and `close()` both throw exceptions, then the method in the first example throws the exception thrown from the finally block (from `close()`) and the exception thrown from the try block (from `readLine()`) is suppressed. In contrast, in the try-with-resources example, if exceptions are thrown from both the try block (from `readLine()`) and the try-with-resources statement (from `close()`), then the the exception from the try block is thrown and the exception thrown from the try-with-resources block is suppressed. You can retrieve these suppressed exceptions by calling the `Throwable.getSuppressed()` method from the exception thrown by the try block.
+But there's a subtle difference between these two try blocks. If the methods `readLine()` and `close()` both throw exceptions, then the method in the first example throws the exception thrown from the finally block (from `close()`) and the exception thrown from the try block (from `readLine()`) is suppressed. In contrast, in the try-with-resources example, if exceptions are thrown from both the try block (from `readLine()`) and the try-with-resources statement (from `close()`), then the exception from the try block is thrown and the exception thrown from the try-with-resources block is suppressed. You can retrieve these suppressed exceptions by calling the `Throwable.getSuppressed()` method from the exception thrown by the try block.
 
 The [Closeable](https://docs.oracle.com/javase/8/docs/api/java/io/Closeable.html) interface extends the [AutoCloseable](https://docs.oracle.com/javase/8/docs/api/java/lang/AutoCloseable.html) interface. The `close()` method of the Closeable interface throws exceptions of type IOException while the close method of the AutoCloseable interface throws exceptions of type Exception.
 
