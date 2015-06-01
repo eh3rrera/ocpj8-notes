@@ -27,13 +27,13 @@ Period timeBetween = Period.between(ld1,ld2); //Difference in years, months, day
 Duration timeSpan = Duration.between(ld1,ld2); //Difference in hours, minutes, seconds
 ````
 
-[TemporalUnit](https://docs.oracle.com/javase/8/docs/api/java/time/temporal/TemporalUnit.html) is an interface that represents an unit of date-time, like years, months, days, hours, minutes and seconds. It doesn't represent the amount of the unit. Its implementation is the class [ChronoUnit](https://docs.oracle.com/javase/8/docs/api/java/time/temporal/ChronoUnit.html), that contains enum constants like:
+[TemporalUnit](https://docs.oracle.com/javase/8/docs/api/java/time/temporal/TemporalUnit.html) is an interface that represents a unit of date-time, like years, months, days, hours, minutes and seconds. It doesn't represent the amount of the unit. Its implementation is the class [ChronoUnit](https://docs.oracle.com/javase/8/docs/api/java/time/temporal/ChronoUnit.html), which contains enum constants like:
 * NANOS - Unit that represents the concept of a nanosecond
 * SECONDS - Unit that represents the concept of a second.
 * HALF_DAYS - Unit that represents the concept of half a day.
 * MILLENNIA - Unit that represents the concept of a millennium. For the ISO calendar system, it is equal to 1000 years.
 
-And almost any other time unit you can imagine. It has some helpful methdos like `between()`. For example, if you need to find the number of years between two dates:
+And almost any other time unit you can imagine. It has some helpful methods like `between()`. For example, if you need to find the number of years between two dates:
 ````java
 ChronoUnit.YEARS.between(date1, date2):
 ````
