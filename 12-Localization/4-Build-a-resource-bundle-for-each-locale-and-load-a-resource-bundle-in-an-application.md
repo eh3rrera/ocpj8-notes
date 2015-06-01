@@ -11,7 +11,7 @@ MyBundle_fr_CA.properties
 ````
 These files should be located in the same directory. If no locale is found for a resource bundle, the default bundle ("MyBundle.properties") will be used.
 
-To load the resource bundle MyBundle.properties for an english locale, we use the following code:
+To load the resource bundle MyBundle.properties for an English locale, we use the following code:
 ````java
 Locale locale = new Locale("en", "US");
 ResourceBundle rb = ResourceBundle.getBundle("MyBundle", locale);
