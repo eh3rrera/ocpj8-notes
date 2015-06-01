@@ -12,8 +12,8 @@ A BlockingQueue has four forms of methods:
 
 **Throws Exception**: If the attempted operation is not possible immediately, an exception is thrown.  
 **Special Value**: If the attempted operation is not possible immediately, a special value is returned (often true / false).  
-**Blocks**: If the attempted operation is not possible immedidately, the method call blocks until it is.  
-**Times Out**: If the attempted operation is not possible immedidately, the method call blocks until it is, but waits no longer than the given timeout.
+**Blocks**: If the attempted operation is not possible immediately, the method call blocks until it is.  
+**Times Out**: If the attempted operation is not possible immediately, the method call blocks until it is, but waits no longer than the given timeout.
 
 It is not possible to insert null into a BlockingQueue. If you try to insert null, the BlockingQueue will throw a NullPointerException.
 
@@ -172,7 +172,7 @@ map.put("2", "two");
 map.put("3", "three");
 ConcurrentNavigableMap tailMap = map.tailMap("2");
 ````
-tailMap contains the keys "2" and "3" because these two keys are greather than or equal to "2".
+tailMap contains the keys "2" and "3" because these two keys are greater than or equal to "2".
 
 The `subMap()` method returns a view of the original map which contains all keys from (including) to (excluding) two keys given as parameters to the method:
 ````java
@@ -187,7 +187,7 @@ submap contains only the key "2", because only this key is greater than or equal
 ###CyclicBarrier
 The [CyclicBarrier](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CyclicBarrier.html) class is a synchronization mechanism that allows a set of threads to all wait for each other to reach a common barrier point. The barrier is called cyclic because it can be re-used after the waiting threads are released.
 
-The waiting threads waits at the CyclicBarrier until either:
+The waiting threads wait at the CyclicBarrier until either:
 * The last thread arrives (calls `await()`)
 * The thread is interrupted by another thread (another thread calls its interrupt() method)
 * Another waiting thread is interrupted
