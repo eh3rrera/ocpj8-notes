@@ -6,11 +6,11 @@ Terminal operation that returns the maximum element of this stream according to 
 ````Optional<T>	min(Comparator<? super T> comparator)````
 Terminal operation that returns the minimum element of this stream according to the provided Comparator wrapped in an Optional object, or an empty Optional if the stream is empty.
 
-````long	count()````
+````long count()````
 Terminal operation that returns the count of elements in this stream.
 
 Comparator is a functional interface, so you can create a comparator in the form of a lambda expression. For example:
-`````java
+````java
 Comparator<String> byLength = (s1, s2) -> Integer.compare( s1.length(), s2.length());
 Optional<String> max = Stream.of("hello","good bye", "black", "white", "good", "bad")
         .max(byLength); //returns "good bye"
