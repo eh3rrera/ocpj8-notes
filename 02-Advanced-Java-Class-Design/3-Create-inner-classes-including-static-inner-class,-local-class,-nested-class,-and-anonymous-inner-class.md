@@ -61,7 +61,7 @@ A nested class or member inner class is a non-static class that is created insid
  ````java
 class OuterClass {
    // Nested class
-   public static class NestedClass {
+   public class NestedClass {
        public void print() { 
          System.out.println("Message from nested class"); 
        }
