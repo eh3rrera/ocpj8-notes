@@ -61,7 +61,7 @@ A nested class or member inner class is a non-static class that is created insid
  ````java
 class OuterClass {
    // Nested class
-   public static class NestedClass {
+   public class NestedClass {
        public void print() { 
          System.out.println("Message from nested class"); 
        }
@@ -115,7 +115,7 @@ Test.this.x = 10
 ````
 
 ###Anonymous Inner Class
-Anonymous Inner classes are classes without name (but not without type) used to override a method of class or interface. They can'y have constructors.
+Anonymous Inner classes are classes without name (but not without type) used to override a method of class or interface. They can't have constructors.
 ````java
 interface Animal {  
   void eat();  
