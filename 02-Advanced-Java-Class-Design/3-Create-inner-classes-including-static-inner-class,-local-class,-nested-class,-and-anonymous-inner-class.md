@@ -115,7 +115,7 @@ Test.this.x = 10
 ````
 
 ###Anonymous Inner Class
-Anonymous Inner classes are classes without name (but not without type) used to override a method of class or interface. They can'y have constructors.
+Anonymous Inner classes are classes without name (but not without type) used to override a method of class or interface. They can't have constructors.
 ````java
 interface Animal {  
   void eat();  
