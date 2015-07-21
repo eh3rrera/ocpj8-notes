@@ -90,7 +90,7 @@ For the First Element:
 |Remove | `removeFirst()` | `pollFirst()` | `takeFirst()` | `pollFirst(timeout, timeunit)`|
 |Examine | `getFirst()`| `peekFirst()` |  |  |
 
-For the Las Element:
+For the Last Element:
 
 | | Throws Exception |	Special Value |	Blocks |	Times Out |
 |----|--------|-----------|----------|-------|
@@ -111,7 +111,7 @@ String a = deque.takeFirst();
 The [ConcurrentMap](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ConcurrentMap.html) interface represents a Map that can handle concurrent access.
 
 The implementation of the ConcurrentMap is:
-* (ConcurrentHashMap](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ConcurrentHashMap.html). A hash table supporting full concurrency of retrievals and high expected concurrency for updates. 
+* [ConcurrentHashMap](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ConcurrentHashMap.html). A hash table supporting full concurrency of retrievals and high expected concurrency for updates. 
 
 Since it extends form Map, it has the same methods as a normal map and some others for concurrent access:
 ````java

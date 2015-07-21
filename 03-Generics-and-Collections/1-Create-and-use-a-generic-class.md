@@ -7,10 +7,10 @@ class Test<T> {
 ````
 Type variables are really parameters that provide information to the compiler so it can check types. In the example above, class *Test* works with an object of type T, the same types that takes method *m*. Here's how we will use it:
 ````java
-Test<String> t1 = new T<>();
+Test<String> t1 = new Test<>();
 t1.m("a");
 
-Test<Integer> t2 = new T<>();
+Test<Integer> t2 = new Test<>();
 t2.m(1);
 ````
 Notice that the generic parameter on the right is optional, it can be inferred by the compiler using the reference declaration.

@@ -27,7 +27,7 @@ catch(ArrayIndexOutOfBoundsException|ArithmeticException, ex) {
 ````
 The multi-catch clause specifies the types of exceptions that the block can handle, and each exception type is separated with a vertical bar (|). In this case, the catch parameter is implicitly final. So in the example, the catch parameter ex is final and therefore you cannot assign any values to it within the catch block.
 
-A restriction when using the multi-catch clause is that you can use related exceptions (subclasses) in the same clause because it is redundant, the exception would already be caught by an alternative. For example, the following is invalid, since ArrayIndexOutOfBoundsException is a subclass of Exception:
+A restriction when using the multi-catch clause is that you can't use related exceptions (subclasses) in the same clause because it is redundant, the exception would already be caught by an alternative. For example, the following is invalid, since ArrayIndexOutOfBoundsException is a subclass of Exception:
 ````java
 try {  
   int arr[] = new int[5];  

@@ -3,7 +3,7 @@ Streams have the following method:
 ````java
 collect(Collector<? super T,A,R> collector)
 ````
-This method performs a mutable reduction operation on the elements of this stream using a {Collector}(https://docs.oracle.com/javase/8/docs/api/java/util/stream/Collector.html).
+This method performs a mutable reduction operation on the elements of this stream using a [Collector](https://docs.oracle.com/javase/8/docs/api/java/util/stream/Collector.html).
 
 A mutable reduction operation accumulates (or collects) input elements into a mutable result container, such as a Collection or StringBuilder, as it processes the elements in the stream.
 

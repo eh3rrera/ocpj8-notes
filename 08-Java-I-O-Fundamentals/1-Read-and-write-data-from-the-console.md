@@ -31,7 +31,7 @@ try
    console = System.console();
    if (console != null)
    {
-      if((passwd = cons.readPassword("[%s]", "Password:")) != null) {
+      if((passwd = console.readPassword("[%s]", "Password:")) != null) {
         java.util.Arrays.fill(passwd, ' ');
       }
    }
