@@ -90,7 +90,7 @@ For the First Element:
 |Remove | `removeFirst()` | `pollFirst()` | `takeFirst()` | `pollFirst(timeout, timeunit)`|
 |Examine | `getFirst()`| `peekFirst()` |  |  |
 
-For the Las Element:
+For the Last Element:
 
 | | Throws Exception |	Special Value |	Blocks |	Times Out |
 |----|--------|-----------|----------|-------|
