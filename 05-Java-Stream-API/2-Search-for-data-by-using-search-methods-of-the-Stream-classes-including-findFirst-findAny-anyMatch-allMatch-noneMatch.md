@@ -8,7 +8,7 @@ The methods are:
 `Optional<T>	findAny()`
 This is a short-circuiting terminal operation that returns an Optional representing some element of the stream. This doesn't guarantee to return the first element of a sorted stream.
 
-`Optional<T>	findAny()`
+`Optional<T>	findFirst()`
 This is a short-circuiting terminal operation that returns the first element of the stream. If the stream has no order, then any element may be returned.
 
 `boolean anyMatch(Predicate<? super T> predicate)`
