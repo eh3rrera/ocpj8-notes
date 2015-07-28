@@ -53,8 +53,8 @@ Instant epochNow = Instant.ofEpochSecond(1000000);
 ````
 It also has get, plus and minus methods:
 ````java
-long s = Instant.getEpochSecond();
-int n = Instant.getNano();
+long s = Instant.now().getEpochSecond();
+int n = Instant.now().getNano();
 Instant twoSecondsAfter = now.plusSeconds(2);
 Instant twoSecondsBefore = now.minusSeconds(2);
 ````
