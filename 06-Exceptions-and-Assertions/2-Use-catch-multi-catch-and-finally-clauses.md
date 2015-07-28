@@ -9,7 +9,7 @@ try {
 catch(ArrayIndexOutOfBoundsException e) {
   e.printStackTrace();
 }  
-catch(ArithmeticException, e) {
+catch(ArithmeticException e) {
   e.printStackTrace();
 }  
 ````
@@ -21,7 +21,7 @@ try {
   arr[10] = 20;  
   int r = arr[10]/10;
 }  
-catch(ArrayIndexOutOfBoundsException|ArithmeticException, ex) {
+catch(ArrayIndexOutOfBoundsException|ArithmeticException ex) {
   ex.printStackTrace();
 }  
 ````
@@ -34,7 +34,7 @@ try {
   arr[10] = 20;  
   int r = arr[10]/10;
 }  
-catch(ArrayIndexOutOfBoundsException|Exception, ex) { // compile-time error
+catch(ArrayIndexOutOfBoundsException|Exception ex) { // compile-time error
   ex.printStackTrace();
 } 
 ````
