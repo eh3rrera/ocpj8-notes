@@ -24,10 +24,10 @@ LocalTime lt2 = LocalTime.parse("14:05:00");
 
 You can use standard getters to obtain values from the classes:
 ````java
-int m = LocalDate.getDayOfMonth();
-int y = LocalDate.getYear();
-int h = LocalTime.getHour();
-int min = LocalTime.getMinute();
+int m = LocalDate.now().getDayOfMonth();
+int y = LocalDate.now().getYear();
+int h = LocalTime.now().getHour();
+int min = LocalTime.now().getMinute();
 ````
 
 You can also modify the object values by using the *with* methods instead of using setters (because the classes are immutable, which also means that you don't actually modify a class, a new one is returned):
@@ -53,8 +53,8 @@ Instant epochNow = Instant.ofEpochSecond(1000000);
 ````
 It also has get, plus and minus methods:
 ````java
-long s = Instant.getEpochSecond();
-int n = Instant.getNano();
+long s = Instant.now().getEpochSecond();
+int n = Instant.now().getNano();
 Instant twoSecondsAfter = now.plusSeconds(2);
 Instant twoSecondsBefore = now.minusSeconds(2);
 ````
@@ -70,7 +70,7 @@ Period period20142015 = Period.between(LocalDate.of( 2014, Month.JANUARY, 1), Lo
 ````
 It also has get, plus and minus methods:
 ````java
-int y = Instant.getYears();
+int y = period.getYears();
 Period newPeriod = period.plusDays(2).minusMonths(1);
 ````
 
