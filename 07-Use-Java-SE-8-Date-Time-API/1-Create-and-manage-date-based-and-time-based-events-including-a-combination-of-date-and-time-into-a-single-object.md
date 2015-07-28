@@ -70,7 +70,7 @@ Period period20142015 = Period.between(LocalDate.of( 2014, Month.JANUARY, 1), Lo
 ````
 It also has get, plus and minus methods:
 ````java
-int y = Instant.getYears();
+int y = period.getYears();
 Period newPeriod = period.plusDays(2).minusMonths(1);
 ````
 
