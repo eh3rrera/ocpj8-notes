@@ -24,10 +24,10 @@ LocalTime lt2 = LocalTime.parse("14:05:00");
 
 You can use standard getters to obtain values from the classes:
 ````java
-int m = LocalDate.getDayOfMonth();
-int y = LocalDate.getYear();
-int h = LocalTime.getHour();
-int min = LocalTime.getMinute();
+int m = LocalDate.now().getDayOfMonth();
+int y = LocalDate.now().getYear();
+int h = LocalTime.now().getHour();
+int min = LocalTime.now().getMinute();
 ````
 
 You can also modify the object values by using the *with* methods instead of using setters (because the classes are immutable, which also means that you don't actually modify a class, a new one is returned):
