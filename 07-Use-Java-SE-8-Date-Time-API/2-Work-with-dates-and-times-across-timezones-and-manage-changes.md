@@ -9,7 +9,7 @@ ZoneId id = ZoneId.of("Europe/Paris");
 ````
 [ZoneOffset](https://docs.oracle.com/javase/8/docs/api/java/time/ZoneOffset.html) is the period of time representing a difference between Greenwich/UTC and a time zone.
 ````java
-ZoneOffset offset = ZoneOffset.of("-6:00");
+ZoneOffset offset = ZoneOffset.of("-06:00");
 ````
 [ZonedDateTime](https://docs.oracle.com/javase/8/docs/api/java/time/ZonedDateTime.html) is a date and time with a fully qualified time zone. You should use this class if you want to represent a date and time without relying on the context of a specific server.  
 ````java
