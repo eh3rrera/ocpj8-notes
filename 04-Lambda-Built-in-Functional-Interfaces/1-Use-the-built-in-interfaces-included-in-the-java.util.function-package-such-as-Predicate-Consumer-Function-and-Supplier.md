@@ -125,5 +125,5 @@ public class Program {
 Basically, a *Supplier* just provides values. The output of the example is:
 ````
 13
-113
+103
 ````
