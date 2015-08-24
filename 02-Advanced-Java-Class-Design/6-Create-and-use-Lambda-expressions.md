@@ -61,7 +61,7 @@ Here's another example of the use of a lambda expression:
 ````java
 @FunctionalInterface
 interface MathFunction {
-    public void operation(int a, int b);
+    public int operation(int a, int b);
 }
 
 public class Test {

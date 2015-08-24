@@ -6,7 +6,6 @@ In Java 8, collections have methods that return a stream, for example, *List* an
 But we don't have to create collections in order to work with streams:
 ````java
 Stream.of("a1", "a2", "a3")
-    .findFirst()
     .forEach(System.out::println);
 ````
 `Stream.of()` will create a stream from object references.

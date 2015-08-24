@@ -28,7 +28,7 @@ OffsetTime ot = OffsetTime.ofInstant(Intant.now(),ZoneId.of("America/Los_Angeles
 
 [Clock](http://docs.oracle.com/javase/8/docs/api/java/time/Clock.html) gives us the ability to get the current date/time from the system clock with a specific timezone:
 ````java
-Clock default = Clock.systemDefaultZone();
+Clock defaultZone = Clock.systemDefaultZone();
 Clock clock = Clock.system(ZoneId.of("Europe/Italy"));
 ````
 
