@@ -82,7 +82,7 @@ LocalDate newDate = date.plus(period);
 ###Duration
 A duration is similar to a period but its precision is based on hours, minutes, seconds, milliseconds. 
 
-A duration can be created using an amount of seconds or minutes or hours or by specifying an start and end times:
+A duration can be created using an amount of seconds or minutes or hours or by specifying start and end times:
 ````java
 Duration d2 = Duration.ofSeconds(10, 50); // 10 seconds and 50 nanoseconds
 Duration d2 = Duration.between(LocalTime.NOON, LocalTime.MIDNIGHT);

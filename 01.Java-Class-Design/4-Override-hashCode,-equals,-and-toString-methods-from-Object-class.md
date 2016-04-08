@@ -41,7 +41,7 @@ The `toString` method for class `Object` returns a string consisting of the name
  
   
   
- The following is an example of an implementation for these methods:
+ The following is an example of an implementation of these methods:
  ````java
  public class Person {
    private final String lastName;

@@ -2,7 +2,7 @@
 An inner class is a class declared inside another class.
  
 ###Static Inner Class
-A inner class declared with the static keyword becomes a static inner class, for example:
+An inner class declared with the static keyword becomes a static inner class, for example:
  ````java
 class OuterClass {
    // Static nested class
@@ -18,7 +18,7 @@ public class Test {
        // create instance of nested Static class
        OuterClass.NestedStaticClass sc = new OuterClass.NestedStaticClass();
 
-       // call non static method of nested static class
+       // call nonstatic method of nested static class
        sc.print();
     }
 }
@@ -75,7 +75,7 @@ public class Test {
        // create instance of nested Static class
        OuterClass.NestedClass nc = oc.new NestedClass();
 
-       // call non static method of nested static class
+       // call nonstatic method of nested static class
        sc.print();
     }
 }
@@ -115,7 +115,7 @@ Test.this.x = 10
 ````
 
 ###Anonymous Inner Class
-Anonymous Inner classes are classes without name (but not without type) used to override a method of class or interface. They can't have constructors.
+Anonymous Inner classes are classes without a name (but not without type) used to override a method of class or interface. They can't have constructors.
 ````java
 interface Animal {  
   void eat();  

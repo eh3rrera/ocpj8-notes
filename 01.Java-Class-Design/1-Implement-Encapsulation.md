@@ -71,4 +71,4 @@ car.setModel(2343242);
 ````
 We'll get a default and valid value that will protect the class from being used in a way it wasn't meant to be.
 
-Encapsulation can be also used with constructors and methods of a class. The key thing is to restrict the access to any member of the class that can break things when something changes or that doesn't want to be exposed.
+Encapsulation can also be used with constructors and methods of a class. The key thing is to restrict the access to any member of the class that can break things when something changes or that doesn't want to be exposed.

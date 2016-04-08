@@ -14,7 +14,7 @@ There's also:
 ````java
 static boolean	notExists(Path path, LinkOption... options)
 ````
-Thtat tests whether the file located by this path does not exist.
+That tests whether the file located by this path does not exist.
 
 ###Read files
 The methods for reading a file are:

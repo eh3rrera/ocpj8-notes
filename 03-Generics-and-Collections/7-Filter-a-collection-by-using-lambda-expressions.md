@@ -4,7 +4,7 @@ The way to filter collections is through the use of a [Predicate](https://docs.o
 
 *Predicate* is a functional interface, which means that wherever an implementation of this interface is expected, we can pass a lambda expression.
 
-For example, consider a list with objects of this class:
+For example, consider a list of objects of this class:
 ````java
 class Person {
 	private int age;

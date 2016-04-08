@@ -4,7 +4,7 @@
 ````
 This method returns a stream consisting of the results of replacing each element of the original stream with the content of the stream produced by the provided function (if the function returns null, an empty stream is used, instead).
 
-This method is commonly used in one to many relationships to flatten all the elements into a new stream.
+This method is commonly used in one&dash;to&dash;many relationships to flatten all the elements into a new stream.
 
 For example, consider the following classes:
 ````java

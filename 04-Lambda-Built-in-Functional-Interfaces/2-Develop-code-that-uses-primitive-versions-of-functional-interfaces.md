@@ -1,9 +1,9 @@
 #Develop code that uses primitive versions of functional interfaces
 Due to the way generics are implemented, parameters of the functional interfaces (for example, *Predicate<T>*) can be bound only to reference types (like *String*, objects, etc).
 
-If you want to use primitive types with these functional interfaces, Java use a mechanism called autoboxing to automatically convert a primitive to its corresponding wrapper type (for example, int to *Integer*) and vice versa.
+If you want to use primitive types with these functional interfaces, Java uses a mechanism called autoboxing to automatically convert a primitive to its corresponding wrapper type (for example, int to *Integer*) and vice versa.
 
-But since boxed values use more memory, this comes with a performance cost. For this reason, Java provides specialized versions of the functional interfaces in order to avoid autoboxing operations when the inputs or outputs are primitives.
+But since boxed values use more memory, this comes with a performance cost. For this reason, Java provides specialized versions of the functional interfaces to avoid autoboxing operations when the inputs or outputs are primitives.
 
 For example, instead of using
 ````java

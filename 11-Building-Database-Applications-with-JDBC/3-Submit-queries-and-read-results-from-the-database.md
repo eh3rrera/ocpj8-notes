@@ -1,6 +1,6 @@
 #Submit queries and read results from the database including creating statements, returning result sets, iterating through the results, and properly closing result sets, statements, and connections
 
-To process a SQL statement with JDBC you have to:
+To process an SQL statement with JDBC you have to:
 
 1. Establishing a connection.
 2. Create a statement.
@@ -37,7 +37,7 @@ To execute a query, call an execute method from Statement such as:
 * `executeQuery()`. Returns one ResultSet object.
 * `executeUpdate()`. Returns an integer representing the number of rows affected by the SQL statement. Use this method if you are using INSERT, DELETE, or UPDATE SQL statements.
 
-With a ResultSet object, you can access the data. It acts like a cursor, pointing  to one row of data and positioned before the first row at the beginning. Then you call for example, the method `next()` to move the cursor forward by one row and you can get the data with getter methods that either take the column index (the first column is 1) or the column name. There are getter methods for a lot of types, for example:
+With a ResultSet object, you can access the data. It acts as a cursor, pointing  to one row of data and positioned before the first row at the beginning. Then you call, for example, the method `next()` to move the cursor forward by one row and you can get the data with getter methods that either take the column index (the first column is 1) or the column name. There are getter methods for a lot of types, for example:
 ````java
 int getInt(int columnIndex);
 int getInt(String columnName);
@@ -52,7 +52,7 @@ BigDecimal getBigDecimal(int columnIndex);
 BigDecimal getBigDecimal(String columnName);
 ````
 
-When you are finished,, call the method `Statement.close()` to immediately release the resources it's using. When you call this method, its ResultSet objects are also closed. If you're not going to need the connection anymore, you should also close the connection with `Connection.close()`. You can use a try-with-resources statement to automatically close Connection, Statement, and ResultSet objects, regardless of whether a SQLException has been thrown. Or you can close them manually in the finally block like this:
+When you are finished, call the method `Statement.close()` to immediately release the resources it's using. When you call this method, its ResultSet objects are also closed. If you're not going to need the connection anymore, you should also close the connection with `Connection.close()`. You can use a try-with-resources statement to automatically close Connection, Statement, and ResultSet objects, regardless of whether an SQLException has been thrown. Or you can close them manually in the finally block like this:
 ````java
 try {
   Connection con = ...

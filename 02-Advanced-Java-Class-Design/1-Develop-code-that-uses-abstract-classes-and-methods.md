@@ -26,7 +26,7 @@ class Dog extends Animal {
 }
 ````
 
-If an abstract class has static members, you can use them with a class reference (AbstractClass.staticMethod()) as you would with any other class.
+If an abstract class has static members, you can use them with a class reference (`AbstractClass.staticMethod()`) as you would with any other class.
 
 Abstract classes are similar to interfaces. However, with abstract classes, you can declare fields that are not static and final, and define public, protected, and private concrete methods. With interfaces, all fields are automatically public, static, and final, and all methods that you declare or define are public. In addition, you can extend only one class, whether or not it is abstract, whereas you can implement any number of interfaces.
 

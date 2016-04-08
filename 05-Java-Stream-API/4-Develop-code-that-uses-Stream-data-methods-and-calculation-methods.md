@@ -35,7 +35,7 @@ Terminal operation that returns an OptionalInt describing the minimum element of
 `OptionalDouble average()`
 Terminal operation that returns an OptionalDouble describing the arithmetic mean of elements of the stream, or an empty optional if this stream is empty.
 
-Except for `average()` that always returns an OptionalDouble, the other methods return a long and OptionalLong for LongStream, and a dobule and OptionalDouble for DoubleStream.
+Except for `average()` that always returns an OptionalDouble, the other methods return a long and OptionalLong for LongStream, and a double and OptionalDouble for DoubleStream.
 
 Here's an example:
 ````java

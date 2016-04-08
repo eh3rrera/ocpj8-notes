@@ -59,4 +59,4 @@ class Cat extends Animal {
 }
 ````
 
-Favoring composition over inheritance is a popular object oriented design principle that helps to create flexible and maintainable code. For example, composition facilitates testing. If one class is composed of another class, you can easily create a mock object representing the composed class.
+Favoring composition over inheritance is a popular object-oriented design principle that helps to create flexible and maintainable code. For example, composition facilitates testing. If one class is composed of another class, you can easily create a mock object representing the composed class.

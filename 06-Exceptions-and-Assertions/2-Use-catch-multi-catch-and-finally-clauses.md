@@ -40,7 +40,7 @@ catch(ArrayIndexOutOfBoundsException|Exception ex) { // compile-time error
 ````
 
 ###Finally
-A finally block is always executed whether exception is handled or not. It's an optional block, and if there's one, it goes after a try or catch block. This means the following blocks are both valid:
+A finally block is always executed whether an exception is handled or not. It's an optional block, and if there's one, it goes after a try or catch block. This means the following blocks are both valid:
 ````java
 try {
   // code that might throw an exception 

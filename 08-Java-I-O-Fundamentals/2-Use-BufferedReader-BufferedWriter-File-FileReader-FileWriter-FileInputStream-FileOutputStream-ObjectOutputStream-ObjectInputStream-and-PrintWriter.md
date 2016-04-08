@@ -119,7 +119,7 @@ try {
 ````
 The other versions of the `write()` method are:
 `write(byte[] bytes)`. It writes all the bytes in the byte array to the OutputStream.
-`write(byte[] bytes, int offset, int length)`. It writes length number of bytes starting from offset from the byte array to the OutputStream.
+`write(byte[] bytes, int offset, int length)`. It writes to the OutputStream length number of bytes starting from an offset of the byte array.
 
 [BufferedReader](https://docs.oracle.com/javase/8/docs/api/java/io/BufferedReader.html)
 
@@ -128,7 +128,7 @@ To add buffering to an InputStream just wrap it in a BufferedInputStream:
 ````java
 Reader r = new BufferedReader(new FileReader("c:\\file.txt"));
 ````
-The BufferedReader creates a byte array internally and fill it by calling the `read()` or `readLine()` methods on the underlying Reader. You can set the buffer size to use internally, for example to 1024 bytes, like this:
+The BufferedReader creates a byte array internally and fills it by calling the `read()` or `readLine()` methods on the underlying Reader. You can set the buffer size to use internally, for example to 1024 bytes, like this:
 ````java
 Reader r = new BufferedReader(new FileReader("c:\\file.txt"), 1024);
 ````

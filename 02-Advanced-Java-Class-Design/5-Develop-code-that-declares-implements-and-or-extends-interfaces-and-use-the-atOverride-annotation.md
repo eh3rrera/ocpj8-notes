@@ -1,6 +1,6 @@
 #Develop code that declares, implements and/or extends interfaces and use the atOverride annotation
 ###Interfaces
-An interface is like an abstract class, except that it cannot contain an implementation of the methods, only their signature (return type, name, parameters and exceptions).
+An interface is like an abstract class, except that it cannot contain an implementation of the methods, only their signature (return type, name, parameters, and exceptions).
 
 An interface is declared using the interface keyword. Just like classes, an interface can be declared public or with package scope (no access modifier).
 ````java
@@ -21,7 +21,7 @@ public class Truck implements Vehicle {
 ````
 A class that implements an interface must implement all the methods declared in the interface. The only exception is default methods. Java 8 introduces this feature, which provides the flexibility to allow an interface to define an implementation which will be used as default in the situation where a class fails to provide an implementation for that method.
 
-This is made by adding the keyword `default` before the method's access modifier and adding the implementation inside interface:
+This is made by adding the keyword `default` before the method's access modifier and adding its implementation inside the interface itself:
 ````java
 interface Vehicle {
     default public void start() {

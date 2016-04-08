@@ -32,7 +32,7 @@ javac Test.java
 ````
 The compilation will fail if assert is used as an identifier.
 
-So compilation is the first step to use assertions. But to execute the assertion checks, you have to enable them with:
+So compilation is the first step to using assertions. But to execute the assertion checks, you have to enable them with:
 ````
 java -ea com.example.Test
 ````

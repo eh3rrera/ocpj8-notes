@@ -1,6 +1,6 @@
 #Use java.util.concurrent collections and classes including CyclicBarrier and CopyOnWriteArrayList
 ###BlockingQueue
-The [BlockingQueue](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/BlockingQueue.html) interface represents a thread-safe queue. Generally, a thread produce objects, while another thread consume them.
+The [BlockingQueue](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/BlockingQueue.html) interface represents a thread-safe queue. Generally, a thread produces objects, while another thread consumes them.
 
 A BlockingQueue has four forms of methods:
 
@@ -194,7 +194,7 @@ The waiting threads wait at the CyclicBarrier until either:
 * Another waiting thread times out while waiting at the CyclicBarrier
 * The `CyclicBarrier.reset()` method is called by some external thread.
 
-When you create a CyclicBarrier you specify how many threads are to wait at it, before releasing them:
+When you create a CyclicBarrier you specify how many threads wait for it, before releasing them:
 ````java
 CyclicBarrier barrier = new CyclicBarrier(2);
 ````
@@ -215,6 +215,6 @@ You can see a complete example in the [javadoc](https://docs.oracle.com/javase/8
 ###CopyOnWriteArrayList
 The [CopyOnWriteArrayList](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CopyOnWriteArrayList.html) class is a thread-safe variant of ArrayList in which all mutative operations (add, set, and so on) are implemented by making a fresh copy of the underlying array.
 
-The iterator of CopyOnWriteArrayList is fail-safe and doesn't throw a ConcurrentModificationException even if underlying CopyOnWriteArrayList is modified once the iteration begins, because the iterator is operating on separate copy of ArrayList. For that reason, all the updates made on CopyOnWriteArrayList are not available to the iterator. However, element-changing operations on iterators themselves (remove, set, and add) are not supported. These methods throw an UnsupportedOperationException.
+The iterator of CopyOnWriteArrayList is fail-safe and doesn't throw a ConcurrentModificationException even if underlying CopyOnWriteArrayList is modified once the iteration begins, because the iterator is operating on a separate copy of ArrayList. For that reason, all the updates made on CopyOnWriteArrayList are not available to the iterator. However, element-changing operations on iterators themselves (remove, set, and add) are not supported. These methods throw an UnsupportedOperationException.
 
-With CopyOnWriteArrayList, there is no lock on read, so this operation is faster. Because of this, CopyOnWriteArrayList is most useful when you have few updates and inserts and many concurrent reads than using for example, `Collections.synchronizedList(arrayList)`.
+With CopyOnWriteArrayList, there is no lock on read, so this operation is faster. Because of this, CopyOnWriteArrayList is most useful when you have few updates and inserts and many concurrent reads than using, for example, `Collections.synchronizedList(arrayList)`.

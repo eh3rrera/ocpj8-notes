@@ -13,7 +13,7 @@ You can refer to the constants in the enum like this:
 ````java
 Colors color = Colors.BLUE;
 ````
-Enums extend from `java.lang.Enum` implicitly, so they cannot extend another class. But they can implement an interface and override any method like normal class.
+Enums extend from `java.lang.Enum` implicitly, so they cannot extend another class. But they can implement an interface and override any method like a normal class.
 
 You can specify values of enum constants at the creation time, but you need to define a constructor for this and, optionally, a method to get these values, for example:
 ````java

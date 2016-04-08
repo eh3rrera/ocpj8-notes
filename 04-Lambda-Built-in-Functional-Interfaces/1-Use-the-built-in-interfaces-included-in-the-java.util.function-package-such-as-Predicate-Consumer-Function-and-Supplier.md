@@ -1,14 +1,14 @@
 #Use  the built-in interfaces included in the java.util.function package such as Predicate, Consumer, Function, and Supplier
-Functional interfaces provide target types for lambda expressions and method references. Each functional interface has a single abstract method, called the functional method for that functional interface, to which the lambda expression's parameter and return types are matched or adapted.
+Functional interfaces provide target types for lambda expressions and method references. Each functional interface has a single abstract method, called *functional method* for that functional interface, to which the lambda expression's parameter and return types are matched or adapted.
 
 ###Predicate
 A predicate is a statement that may be true or false depending on the values of its variables. It can be thought of as a function that returns a value that is either true or false.
 
-In java 8, a *Predicate* is a functional interface that can be used anywhere you need to evaluate a boolean condition. Since it's a functional interface, you can pass a lambda expression wherever a *Predicate* is expected.
+In Java 8, a *Predicate* is a functional interface that can be used anywhere you need to evaluate a boolean condition. Since it's a functional interface, you can pass a lambda expression wherever a *Predicate* is expected.
 
 See the [API](https://docs.oracle.com/javase/8/docs/api/java/util/function/Predicate.html) to know the methods of this interface.
 
-Here's an example. First we see how the interface with an anonymous class:
+Here's an example. First, we see how the interface with an anonymous class:
 ````java
 Predicate<String> isALongWord = new Predicate<String>() {
     @Override
@@ -77,7 +77,7 @@ Basically, what *Consumer* does is executing the assigned lambda expression. The
 ````
 
 ###Function
-This functional interface represents a function that accepts one argument and produces a result. One use for example, it's  to convert or transform from one object to another. Since it's a functional interface, you can pass a lambda expression wherever a *Function* is expected.
+This functional interface represents a function that accepts one argument and produces a result. One use, for example, it's  to convert or transform from one object to another. Since it's a functional interface, you can pass a lambda expression wherever a *Function* is expected.
 
 See the [API](https://docs.oracle.com/javase/8/docs/api/java/util/function/Function.html) to know the methods of this interface.
 

@@ -1,5 +1,7 @@
 # ocpj8-notes
-Notes to study for the OCPJ 8 exam (1Z1-809)
+Notes to study for the OCPJ 8 exam (1Z1-809).
+
+Are you preparing for this exam? I have a full book about it, you can read it online for free [here](http://ocpj8.javastudyguide.com/).
 
 ## License
 The content is licensed under the [Creative Commons Attribution-NonCommercial 4.0 International](http://creativecommons.org/licenses/by-nc/4.0/) license.

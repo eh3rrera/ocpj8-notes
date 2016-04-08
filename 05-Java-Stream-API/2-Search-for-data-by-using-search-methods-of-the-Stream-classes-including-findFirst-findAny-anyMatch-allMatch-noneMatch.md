@@ -1,5 +1,5 @@
 #Search for data by using search methods of the Stream classes including findFirst, findAny, anyMatch, allMatch, noneMatch
-We hava two types of methods in the Stream API to search for data:
+We have two types of methods in the Stream API to search for data:
 * findXXX methods. Take no arguments and return an Optional object with the result, or an empty Optional if nothing is found.
 * XXXMatch methods. Take a Predicate and return a boolean if an element in the stream returns true by applying the Predicate.
 
@@ -12,15 +12,15 @@ This is a short-circuiting terminal operation that returns an Optional represent
 This is a short-circuiting terminal operation that returns the first element of the stream. If the stream has no order, then any element may be returned.
 
 `boolean anyMatch(Predicate<? super T> predicate)`
-This is a short-circuiting terminal operation that returns whether any elements of this stream match the provided predicate.  If the stream is empty then false is returned and the predicate is not evaluated.
+This is a short-circuiting terminal operation that returns whether any elements of this stream match the provided predicate.  If the stream is empty, then false is returned and the predicate is not evaluated.
 
 `boolean allMatch(Predicate<? super T> predicate)`
-This is a short-circuiting terminal operation that returns whether all elements of this stream match the provided predicate.  If the stream is empty then true is returned and the predicate is not evaluated.
+This is a short-circuiting terminal operation that returns whether all elements of this stream match the provided predicate.  If the stream is empty, then true is returned and the predicate is not evaluated.
 
 `boolean noneMatch(Predicate<? super T> predicate)`
-This is a short-circuiting terminal operation that returns whether no elements of this stream match the provided predicate.  If the stream is empty then true is returned and the predicate is not evaluated.
+This is a short-circuiting terminal operation that returns whether no elements of this stream match the provided predicate.  If the stream is empty, then true is returned and the predicate is not evaluated.
 
-A short-circuiting terminal operation basically means that there's no need to process the entire stream to return a result. As soon as an element that fits the predicate is found or that a result can be inferred, the result is return.
+A short-circuiting terminal operation basically means that there's no need to process the entire stream to return a result. As soon as an element that fits the predicate is found or that a result can be inferred, the result is returned.
 
 Here's an example:
 ````java

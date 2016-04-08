@@ -100,5 +100,5 @@ public class Test {
 ````
 
 The characteristics of a static nested class are:
-* Nested static classes don't need a reference of their outer class (the enclosing class)
+* Nested static classes don't need a reference to their outer class (the enclosing class)
 * Only static members of the outer class are accessible in a nested static class

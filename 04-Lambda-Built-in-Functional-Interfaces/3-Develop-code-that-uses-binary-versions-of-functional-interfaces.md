@@ -6,7 +6,7 @@ The following functional interfaces:
 * Function&lt;T,R&gt;
 * UnaryOperator&lt;T&gt;
 
-Represent an operation that takes one argument. But there are versions of these interfaces that take two arguments called. These are the binary versions. They have the same semantics, the only difference is the number of arguments. Note there is no binary version of *Supplier*. This is due to the fact that a *Supplier* takes no arguments.
+Represent an operation that takes one argument. But there are versions of these interfaces that take two arguments called. These are the binary versions. They have the same semantics, the only difference is the number of arguments. Note there is no binary version of *Supplier*. This is because a *Supplier* takes no arguments.
 
 Here's a summary of the binary versions of the functional interfaces along with their primitive versions and a link to their javadoc:
 

@@ -8,10 +8,10 @@ Localization is the process of adapting the content of a product to a specific r
 * Images and sounds
 * Layouts
 
-Even in countries with the same languages you can find differences, for example, American English vs British English.
+Even in countries with the same languages, you can find differences, for example, American English vs. British English.
 
 So the benefits of localization are:
 * With the addition of localized data, the same executable can run worldwide.
-* Textual elements, such as status messages and the GUI component labels, are not hardcoded in the program. Instead they are stored outside the source code and retrieved dynamically.
+* Textual elements, such as status messages and the GUI component labels, are not hardcoded in the program. Instead, they are stored outside the source code and retrieved dynamically.
 * Support for new languages does not require recompilation.
 * Culturally-dependent data, such as dates and currencies, appear in formats that conform to the end user's region and language.

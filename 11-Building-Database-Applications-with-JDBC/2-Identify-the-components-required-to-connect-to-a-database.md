@@ -1,7 +1,7 @@
 #Identify the components required to connect to a database using the DriverManager class including the JDBC URL
 When working with JDBC, the first thing you need to do is to establish a connection with a data source (like a DBMS). One way to this is to use the class [DriverManager](https://docs.oracle.com/javase/8/docs/api/java/sql/DriverManager.html).
 
-DriverManager connects an application to a data source by using a database URL. When this class first attempts to establish a connection, it automatically loads any JDBC 4.0 drivers found within the class path.
+DriverManager connects an application to a data source by using a database URL. When this class first attempts to establish a connection, it automatically loads any JDBC 4.0 drivers found within the classpath.
 
 A database URL varies depending on the DBMS used. For example, for MySQL it looks like this:
 ````

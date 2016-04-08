@@ -16,7 +16,7 @@ If exception is not handled, the Java Virtual Machine provides a default excepti
 2. Prints the stack trace (Hierarchy of methods where the exception occurred).
 3. Causes the program to terminate.
 
-But if exception is handled by in a try-catch block, the normal flow of the application is maintained and rest of the code is executed.
+But if an exception is handled by in a try-catch block, the normal flow of the application is maintained and rest of the code is executed.
 
 If you want to manually throw an exception, use the throw keyword:
 ````java

@@ -10,7 +10,7 @@ Stream.of("a1", "a2", "a3")
 ````
 `Stream.of()` will create a stream from object references.
 
-Besides regular object streams, Java 8 brings special kinds of streams for working with the primitive data types, sucha as *IntStream*, *LongStream* and *DoubleStream*.
+Besides regular object streams, Java 8 brings special kinds of streams for working with the primitive data types, such as *IntStream*, *LongStream* and *DoubleStream*.
 
 *IntStreams* for example, can replace the regular for loop using `IntStream.range()`:
 ````java

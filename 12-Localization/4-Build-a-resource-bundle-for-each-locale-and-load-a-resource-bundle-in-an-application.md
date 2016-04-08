@@ -2,7 +2,7 @@
 
 [java.util.ResourceBundle](http://docs.oracle.com/javase/8/docs/api/java/util/ResourceBundle.html) class is used to store texts in key/pair values and components that are locale sensitive.
 
-Resource bundles can share a common base name, but names can also have additional components that identify their locales. For example, if the base name of resource bundles is "MyBundle", we can have a "MyBundle_en" for the english locale and "MyBundle_es" for a spanish locale. We can even have different resources for different countries, for example, "MyBundle_fr_CA" for canadian french:
+Resource bundles can share a common base name, but names can also have additional components that identify their locales. For example, if the base name of resource bundles is "MyBundle", we can have a "MyBundle_en" for the English locale and "MyBundle_es" for a Spanish locale. We can even have different resources for different countries, for example, "MyBundle_fr_CA" for Canadian French:
 ````
 MyBundle.properties
 MyBundle_en.properties

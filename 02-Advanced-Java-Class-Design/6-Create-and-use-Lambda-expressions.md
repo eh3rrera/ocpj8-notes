@@ -20,7 +20,7 @@ A lambda expression has the following syntax:
 ````
 parameter -> expression body
 ````
-* The type declaration is optional.  Compiler can inference the same from value of the parameter.
+* The type declaration is optional. The compiler can inference the type from the value of the parameter.
 * Parentheses around the parameter are optional. The parentheses are required only for multiple parameters.
 * Curly braces in the expression body are optional. - The braces are required only if the expression body contains more than one statement.
 * A return keyword in the expression body is optional. The compiler automatically returns a value if the expression body has a single expression to return the value. 

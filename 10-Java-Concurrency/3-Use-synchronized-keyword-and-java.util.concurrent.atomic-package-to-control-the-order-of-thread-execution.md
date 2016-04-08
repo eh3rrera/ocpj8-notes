@@ -8,7 +8,7 @@ void m() {
     this.n = this.n + 1;
 }
 ````
-The increment of variable n is vulnerable to concurrency. We can use the synchronized keyword to fix this. We can for example synchronize the method:
+The increment of variable n is vulnerable to concurrency. We can use the synchronized keyword to fix this. We can, for example, synchronize the method:
 ````java
 int n = 0;
 
@@ -26,7 +26,7 @@ void m() {
   }
 }
 ````
-Internally, Java uses a so monitor or lock in order to manage synchronization. This monitor is bound to an object. For synchronized instance methods, the lock is on the instance of the corresponding object. For static methods, it's the class. For synchronized blocks, the object can be specified (the example use this to refer to the instance the method belongs to). Only the thread that acquires the lock has access to the method (or block).
+Internally, Java uses a so monitor or lock to manage synchronization. This monitor is bound to an object. For synchronized instance methods, the lock is on the instance of the corresponding object. For static methods, it's the class. For synchronized blocks, the object can be specified (the example use this to refer to the instance the method belongs to). Only the thread that acquires the lock has access to the method (or block).
 
 ###java.util.concurrent.atomic
 [java.concurrent.atomic](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/atomic/package-summary.html) contains classes to perform atomic operations. With an atomic operation, you can safely perform the operation in parallel on multiple threads without using the synchronized keyword or locks.
@@ -37,7 +37,7 @@ We have for example:
 * DoubleAdder and LongAdder, where one or more variables together maintain an initially zero sum of the corresponding type.
 * DoubleAccumulator and LongAccumulator, where one or more variables together maintain a running value of the corresponding type updated using a supplied binary operator.
 
-The syncrhonized example above can be changed to use an AtomicInteger in this way:
+The synchronized example above can be changed to use an AtomicInteger in this way:
 ````java
 AtomicInteger n = new AtomicInteger(); // creates an AtomicInteger with the initial value 0.
 

@@ -1,4 +1,4 @@
-#Work with dates and times across timezones and manage changes resulting from daylight savings including Format date and times values
+#Work with dates and times across time zones and manage changes resulting from daylight savings including Format date and times values
 ###Timezones
 Time zones are defined by their offset from Coordinated Universal Time (UTC) and correspond to a region in which the time is the same.
 
@@ -18,7 +18,7 @@ ZonedDateTime zdt2 = ZonedDateTime.now(ZoneId.of("Europe/Paris"));
 ````
 [OffsetDateTime](https://docs.oracle.com/javase/8/docs/api/java/time/OffsetDateTime.html) is an immutable representation of a date-time with an offset from UTC/Greenwich, for example '2000-12-31T10:15:30+01:00'.
 
-OffsetDateTime, ZonedDateTime and Instant all store an instant on the timeline to a nanosecond precision. Instant is the simplest, just representing the instant. OffsetDateTime adds to the instant the offset from UTC/Greenwich, which allows the local date-time to be obtained. ZonedDateTime adds full timezone data.
+OffsetDateTime, ZonedDateTime, and Instant all store an instant on the timeline to a nanosecond precision. Instant is the simplest, just representing the instant. OffsetDateTime adds to the instant the offset from UTC/Greenwich, which allows the local date-time to be obtained. ZonedDateTime adds full timezone data.
 
 [OffsetTime](https://docs.oracle.com/javase/8/docs/api/java/time/OffsetTime.html) is a time with an offset from UTC/Greenwich in the ISO-8601 calendar system, such as '08:45:21+05:00'.
 ````java

@@ -1,10 +1,10 @@
 #Use java.util.Comparator and java.lang.Comparable interfaces
-`compareTo(obj)` is from the [Comparable](http://docs.oracle.com/javase/8/docs/api/java/lang/Comparable.html) interface and is called on one object, to compare it to another object, so the object to be compared has to implement this interface.
+`compareTo(obj)` is the method of the [Comparable](http://docs.oracle.com/javase/8/docs/api/java/lang/Comparable.html) interface that is called on one object, to compare it to another object, so the object to be compared has to implement this interface.
 ````java
 String s = "hello";
 int result = s.compareTo("world");
 ````
-`compare(obj1, obj2)` is from the [Comparator](http://docs.oracle.com/javase/8/docs/api/java/util/Comparator.html) interface and is called on some object to compare two other objects, so an utility class has to implement this interface to be used somewhere else.
+`compare(obj1, obj2)` is the method of the [Comparator](http://docs.oracle.com/javase/8/docs/api/java/util/Comparator.html) interface that is called on some object to compare two other objects, so a utility class has to implement this interface to be used somewhere else.
 ````java
 Comparator<String> comp = new MyComparator<>();
 int result = comp.compare("hello", "world");

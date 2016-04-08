@@ -27,4 +27,4 @@ The DriverManager class tracks the loaded JDBC drivers and creates the database 
 ````java
 Class.forName("com.jw.client.JWDriver");
 ````
-From JDBC 4.0 this is done automatically. This registers the driver with the DriverManager. This way, when a program creates a database connection with the `DriverManager.getConnection()` method, the DriverManager in turn calls the `Driver.connect()` method. Every JDBC driver must implement the java.sql.Driver interface. So, the JDBC driver's `connect()` method checks whether the driver URL is correct, and then, returns the Connection within its `connect()` method.
+From JDBC 4.0 this is done automatically. This registers the driver with the DriverManager. This way, when a program creates a database connection with the `DriverManager.getConnection()` method, the DriverManager, in turn, calls the `Driver.connect()` method. Every JDBC driver must implement the java.sql.Driver interface. So, the JDBC driver's `connect()` method checks whether the driver URL is correct, and then, returns the Connection within its `connect()` method.

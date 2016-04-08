@@ -1,11 +1,11 @@
 #Create and use a generic class
-Generics introduce the concept of type variable. Type variable are delimited by angle brackets and follow the class (or the interface) name:
+Generics introduce the concept of a type variable. Type variables are delimited by angle brackets and follow the class (or the interface) name:
 ````java
 class Test<T> {
   void m(T arg) { /** Do something with the argument of type T */ }
 }
 ````
-Type variables are really parameters that provide information to the compiler so it can check types. In the example above, class *Test* works with an object of type T, the same types that takes method *m*. Here's how we will use it:
+Type variables are parameters that provide information to the compiler so it can check types. In the example above, class *Test* works with an object of type T, the same type that takes method *m*. Here's how we will use it:
 ````java
 Test<String> t1 = new Test<>();
 t1.m("a");

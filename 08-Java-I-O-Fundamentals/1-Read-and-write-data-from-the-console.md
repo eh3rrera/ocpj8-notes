@@ -1,7 +1,7 @@
 #Read and write data from the console
 
 ###Console object
-Access to the console depends upon the underlying platform and also upon the way in which the java program is invoked. If it's started from the command line without redirecting the standard input and output streams then its console will exist. If it's stated for example by a background job scheduler or an IDE, it's most likely that it will be no access to the console.
+Access to the console depends upon the underlying platform and also upon the way in which the Java program is invoked. If it's started from the command line without redirecting the standard input and output streams, then its console will exist. If it's stated for example by a background job scheduler or an IDE, it's most likely that it will be no access to the console.
 
 If there's a console,  it will be available with the `System.console()` method. If it's not available, an invocation of that method will return null.
 

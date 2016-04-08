@@ -143,7 +143,7 @@ executorService.shutdown();
 ````
 
 ####submit(Runnable)
-This method takes a Runnable, but returns a Future object. This object returns null when the Runnable has finished executing:
+This method takes a Runnable but returns a Future object. This object returns null when the Runnable has finished executing:
 ````java
 Future future = executorService.submit(new Runnable() {
     public void run() {
@@ -167,7 +167,7 @@ executorService.shutdown();
 ````
 
 ####invokeAny(Collection<? extends Callable<T>>)
-This method executes the given tasks returning the result of one that has completed successfully. You have no guarantee about which of the Callable's results you'll get, just one of the ones that finish. When one of the tasks complete or throws an exception, the rest are cancelled. For example:
+This method executes the given tasks returning the result of one that has completed successfully. You have no guarantee about which of the Callable's results you'll get, just one of the ones that finish. When one of the tasks complete or throws an exception, the rest are canceled. For example:
 ````java
 List<Callable<String>> callables = new ArrayList<Callable<String>>();
 callables.add(new Callable<String>() {

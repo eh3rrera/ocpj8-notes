@@ -52,7 +52,7 @@ A reduce operation on elements of type <T> yielding a result of type <U> require
               BiFunction<U, ? super T, U> accumulator,
               BinaryOperator<U> combiner);
 ````
-Here, the identity element is both an initial seed value for the reduction and a default result if there are no input elements. The accumulator function takes a partial result and the next element, and produces a new partial result. The combiner function combines two partial results to produce a new partial (or the final) result. Example:
+Here, the identity element is both an initial seed value for the reduction and a default result if there are no input elements. The accumulator function takes a partial result and the next element and produces a new partial result. The combiner function combines two partial results to produce a new partial (or the final) result. Example:
 ````java
 int sum = numbers.parallelStream()
                   .reduce(0, 
