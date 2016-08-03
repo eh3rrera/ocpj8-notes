@@ -22,7 +22,7 @@ public class Dog extends Animal {
   public void bark() { /* Do something */ }
 }
 ````
-So now *Dog* has two methods, `eat()` that is inherited from *Dog* and `bark()` that is specific to the *Dog* class. *Animal* still has one method, inheritance only works from the superclasses to the subclasses.
+So now *Dog* has two methods, `eat()` that is inherited from *Animal* and `bark()` that is specific to the *Dog* class. *Animal* still has one method, inheritance only works from the superclasses to the subclasses.
 
 Not everything can be inherited, and this depends directly from the used visibility modifiers.
 
