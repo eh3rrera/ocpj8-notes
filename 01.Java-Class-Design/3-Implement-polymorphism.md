@@ -1,4 +1,4 @@
-#Implement polymorphism
+# Implement polymorphism
 
 With inheritance, you can take advantage of polymorphism. Polymorphism is based on the fact that you can use a variable of a superclass type to hold a reference to an object whose class is any of its subclasses, for example:
 ````java
