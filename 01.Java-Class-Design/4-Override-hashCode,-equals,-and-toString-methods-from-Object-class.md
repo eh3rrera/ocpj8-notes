@@ -1,6 +1,6 @@
-#Override hashCode, equals, and toString methods from Object class
+# Override hashCode, equals, and toString methods from Object class
 
-###equals
+### equals
 From [javadoc](http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html#equals-java.lang.Object-):
 
 `public boolean equals(Object obj)`
@@ -15,7 +15,7 @@ The equals method implements an equivalence relation on non-null object referenc
 
 It is generally necessary to override the `hashCode` method whenever this method is overridden, so as to maintain the general contract for the `hashCode` method, which states that equal objects must have equal hash codes.
 
-###hashCode
+### hashCode
 From [javadoc](http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html#hashCode--):
 
 `public int hashCode()`
