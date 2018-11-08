@@ -1,8 +1,8 @@
-#Develop code that uses static keyword on initialize blocks, variables, methods, and classes
+# Develop code that uses static keyword on initialize blocks, variables, methods, and classes
 
 A static member belongs to the class rather than to an instance of the class.
 
-###Static Initialize Blocks
+### Static Initialize Blocks
 A static block is used to initialize a static variable or execute some initialize code since the block is executed at the time of the class loading, before any constructors or methods.
 ````java
 class Block {  
@@ -28,7 +28,7 @@ main method executed
 ````
 Static blocks are executed in the order they are defined.
 
-###Statics Variables
+### Statics Variables
 A static variable is used to refer a common property of all objects or instances (something that is not unique for each object)  of a class. It's initialized at the time of class loading.
 ````java
 public class Man {
@@ -40,7 +40,7 @@ public class Man {
   }
   
   void display() {
-    System.out.println(name+" "+name+" "+gender+" "+gender);
+    System.out.println(name+" "+gender);
   }  
   
   public static void main(String args[]) {
@@ -58,30 +58,30 @@ Bob M
 Richard M
 ````
 
-###Static Method
+### Static Method
 A static method also belongs to the class rather than object of a class and can be invoked without the need for creating an instance of a class. The only restrictions are:
 1. A static method can only access another static  member.
 2. `this` and `super` cannot be used in a static method.
 ````java
 public class Square {  
-    static int calculate(int x){  
-    return x*x;  
+  static int calculate(int x) {  
+    return x * x;  
   }  
   
-  public static void main(String args[]){  
+  public static void main(String args[]) {  
     int result = Square.calculate(9);  
     System.out.println(result);  
   }  
 } 
 ````
 
-###Static Classes
+### Static Classes
 We can define a class within another class. Such a class is called a nested class. We can't make a top level class static. Only nested classes can be static.
 
 ````java
 class OuterClass {
    // Static nested class
-   public static class NestedStaticClass{
+   public static class NestedStaticClass {
        public void print() { 
          System.out.println("Message from nested static class"); 
        }
