@@ -1,5 +1,5 @@
-#Create and use singleton classes and immutable classes
-###Singleton
+# Create and use singleton classes and immutable classes
+### Singleton
 Singleton is a design pattern that provides a way for a class to create only one object from that class. 
 
 The key for a Singleton class is to make the constructor private, have a static instance of itself and a method to access it:
@@ -9,10 +9,10 @@ public class Singleton {
    private static final Singleton instance = new Singleton();
 
    //Make the constructor private so that this class cannot be instantiated
-   private Singleton(){}
+   private Singleton() {}
 
    //Get the only object available
-   public static Singleton getInstance(){
+   public static Singleton getInstance() {
       return instance;
    }
 }
@@ -26,22 +26,22 @@ The other ways to build a Singleton class are:
 
 **Using an Enum**
 ````java
-public enum Singleton{
+public enum Singleton {
     INSTANCE;
 }
 ````
 **Locking /Lazy loading with Double checked Locking**
 ````java
-public class Singleton{
+public class Singleton {
      private static volatile Singleton instance;
 
-     private Singleton(){}
+     private Singleton() {}
 
-     public static Singleton getInstance(){
-         if(instance == null){
-            synchronized(Singleton.class){
+     public static Singleton getInstance() {
+         if(instance == null) {
+            synchronized(Singleton.class) {
                 //double checking Singleton instance
-                if(instance == null){
+                if(instance == null) {
                     instance = new Singleton();
                 }
             }
@@ -51,7 +51,7 @@ public class Singleton{
 }
 ````
 
-###Immutable objects
+### Immutable objects
 Immutable objects are simply objects whose state (data) cannot change after construction, for examples the String class. They are useful in concurrent applications, since they cannot change state, they cannot be corrupted by threads.
 
 There are several ways for creating immutable objects:

@@ -1,6 +1,6 @@
-#Implement inheritance including visibility modifiers and composition
+# Implement inheritance including visibility modifiers and composition
 
-###Inheritance
+### Inheritance
 With inheritance, you created classes based on the other classes so they can get the attributes and methods from the base class to reuse them and even redefine them.
 
 The keyword `extends` is used to make a new class that derives from an existing class. The base class is called the superclass and the new class is called the subclass.
@@ -39,7 +39,7 @@ When you create a subclass, the methods in the subclass cannot have less accessi
 
 In Java, a class is only allowed to inherit from a single superclass (singular inheritance). In some programming languages, like C++, it is possible for a subclass to inherit from multiple superclasses (multiple inheritance).
 
-###Composition
+### Composition
 You do composition by having an instance of another class as a field of your class instead of extending.
 
 When to use which?
